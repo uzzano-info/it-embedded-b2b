@@ -5,23 +5,26 @@
         "ram": "8GB LPDDR5",
         "tempRange": "-40~85°C",
         "protocol": "CAN-FD, GMSL2",
-        "downloads": 342
+        "downloads": 342,
+        "datasheet": "AUTO-Edge_V1_Datasheet.pdf"
     },
     {
         "model": "AUTO-Edge V2",
         "cpu": "NVIDIA Orin NX",
         "ram": "16GB LPDDR5",
-        "tempRange": "-40~85°C",
-        "protocol": "CAN-FD, GMSL2",
-        "downloads": 256
+        "tempRange": "-40~105°C",
+        "protocol": "CAN-FD, GMSL2, 10GbE",
+        "downloads": 256,
+        "datasheet": "AUTO-Edge_V2_Datasheet.pdf"
     },
     {
         "model": "AUTO-Fusion F1",
         "cpu": "Qualcomm Snapdragon Ride",
-        "ram": "32GB LPDDR5",
+        "ram": "16GB LPDDR5",
         "tempRange": "-40~105°C",
-        "protocol": "CAN-FD, Ethernet",
-        "downloads": 189
+        "protocol": "CAN-FD, GMSL2, PCIe 4.0",
+        "downloads": 189,
+        "datasheet": "AUTO-Fusion_F1_Datasheet.pdf"
     },
     {
         "model": "AUTO-Radar R1",
@@ -29,7 +32,8 @@
         "ram": "512MB RAM",
         "tempRange": "-40~125°C",
         "protocol": "CAN-FD, 100BASE-T1",
-        "downloads": 421
+        "downloads": 421,
+        "datasheet": "AUTO-Radar_R1_Datasheet.pdf"
     },
     {
         "model": "AUTO-Vision C1",
@@ -37,6 +41,7 @@
         "ram": "4GB LPDDR4",
         "tempRange": "-40~105°C",
         "protocol": "GMSL2, FPD-Link III",
-        "downloads": 97
+        "downloads": 97,
+        "datasheet": "AUTO-Vision_C1_Datasheet.pdf"
     }
 ]

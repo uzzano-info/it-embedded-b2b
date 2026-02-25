@@ -40,7 +40,7 @@ export default function Features() {
                     </p>
                 </motion.div>
 
-                <div className={styles.tabBar} role="tablist" aria-label="핵심 기능 탭">
+                <div className={styles.tabBar} role="tablist" aria-label="Core technology tabs">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}

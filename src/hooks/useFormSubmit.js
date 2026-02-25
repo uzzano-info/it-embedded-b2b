@@ -34,7 +34,7 @@ export default function useFormSubmit() {
             if (!res.ok) {
                 // 404 = API not deployed yet (dev mode)
                 if (res.status === 404) throw new DemoFallbackError()
-                throw new Error(data.error || `서버 오류 (${res.status})`)
+                throw new Error(data.error || `Server error (${res.status})`)
             }
 
             setResult(data)
@@ -47,7 +47,7 @@ export default function useFormSubmit() {
                     success: true,
                     inquiryId: `INQ-${Date.now()}`,
                     webhookForwarded: false,
-                    message: '접수 완료 (데모 모드). 실제 배포 시 API가 연동됩니다.',
+                    message: 'Submission received (demo mode). API will be connected on production deployment.',
                     demo: true,
                 }
                 setResult(demoResult)

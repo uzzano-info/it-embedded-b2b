@@ -30,17 +30,17 @@ export default function ConversionForm() {
 
     const validateStep1 = () => {
         const e = {}
-        if (!form.company.trim()) e.company = '회사명을 입력해 주세요.'
-        if (!form.name.trim()) e.name = '담당자명을 입력해 주세요.'
-        if (!form.email.trim()) e.email = '이메일을 입력해 주세요.'
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = '올바른 이메일 형식이 아닙니다.'
+        if (!form.company.trim()) e.company = 'Please enter your company name.'
+        if (!form.name.trim()) e.name = 'Please enter your name.'
+        if (!form.email.trim()) e.email = 'Please enter your email.'
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Please enter a valid email address.'
         setErrors(e)
         return Object.keys(e).length === 0
     }
 
     const validateStep2 = () => {
         const e = {}
-        if (!form.inquiryType) e.inquiryType = '문의 유형을 선택해 주세요.'
+        if (!form.inquiryType) e.inquiryType = 'Please select a solution of interest.'
         setErrors(e)
         return Object.keys(e).length === 0
     }
@@ -60,7 +60,7 @@ export default function ConversionForm() {
 
     const handleSubmit = async () => {
         if (!agreed) {
-            setErrors({ agree: '개인정보 처리방침에 동의해 주세요.' })
+            setErrors({ agree: 'Please agree to the Privacy Policy.' })
             return
         }
         try {
@@ -104,7 +104,7 @@ export default function ConversionForm() {
                             A dedicated engineer will review and respond within 24 hours.
                         </p>
                         <span className={`${styles.successId} mono`}>#{inquiryId}</span>
-                        {result.demo && <p className={styles.demoNote}>* 데모 모드 — Vercel 배포 시 실제 API가 연동됩니다.</p>}
+                        {result.demo && <p className={styles.demoNote}>* Demo mode — API will be connected on production deployment.</p>}
                     </motion.div>
                 </div>
             </section>
@@ -184,7 +184,7 @@ export default function ConversionForm() {
                                 <div key={s} className={`${styles.progressStep} ${s <= step ? styles.progressActive : ''}`}>
                                     <span className={styles.progressDot}>{s <= step ? '●' : '○'}</span>
                                     <span className={styles.progressLabel}>
-                                        {s === 1 ? '기본 정보' : s === 2 ? '도입 목적' : '제출'}
+                                        {s === 1 ? 'Basic Info' : s === 2 ? 'Project' : 'Submit'}
                                     </span>
                                 </div>
                             ))}

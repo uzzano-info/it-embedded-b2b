@@ -19,7 +19,7 @@ function App() {
     return (
         <>
             <a href="#main-content" className="skip-link">
-                본문으로 건너뛰기
+                Skip to main content
             </a>
             <Header />
             <main id="main-content">

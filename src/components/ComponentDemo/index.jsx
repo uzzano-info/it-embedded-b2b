@@ -7,9 +7,9 @@ import DatasheetHub from './DatasheetHub'
 import styles from './ComponentDemo.module.css'
 
 const tabs = [
-    { id: 'spec', label: '📊 스펙 비교 테이블' },
-    { id: 'arch', label: '🏗️ 아키텍처 다이어그램' },
-    { id: 'data', label: '📄 데이터시트 허브' },
+    { id: 'spec', label: '📊 Spec Comparison Table' },
+    { id: 'arch', label: '🏗️ Architecture Diagram' },
+    { id: 'data', label: '📄 Datasheet Hub' },
 ]
 
 const tabContent = { spec: SpecTable, arch: ArchitectureDiagram, data: DatasheetHub }
@@ -36,7 +36,7 @@ export default function ComponentDemo() {
                     </p>
                 </motion.div>
 
-                <div className={styles.tabBar} role="tablist" aria-label="데모 탭">
+                <div className={styles.tabBar} role="tablist" aria-label="Demo tabs">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}

@@ -41,12 +41,12 @@ export default function Header() {
                     href="#"
                     className={styles.logo}
                     onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-                    aria-label="페이지 상단으로"
+                    aria-label="Back to top"
                 >
                     ▲ AUTO-ADAS
                 </a>
 
-                <nav className={styles.nav} aria-label="메인 내비게이션">
+                <nav className={styles.nav} aria-label="Main navigation">
                     {links.map((l) => (
                         <a key={l.href} href={l.href} onClick={(e) => handleNavClick(e, l.href)}>
                             {l.label}
@@ -61,7 +61,7 @@ export default function Header() {
                 <button
                     className={styles.hamburger}
                     onClick={() => setMobileOpen(!mobileOpen)}
-                    aria-label={mobileOpen ? '메뉴 닫기' : '메뉴 열기'}
+                    aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                     aria-expanded={mobileOpen}
                 >
                     {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +70,7 @@ export default function Header() {
 
             {/* Mobile overlay */}
             <div className={`${styles.mobileOverlay} ${mobileOpen ? styles.open : ''}`}>
-                <nav className={styles.mobileNav} aria-label="모바일 내비게이션">
+                <nav className={styles.mobileNav} aria-label="Mobile navigation">
                     {links.map((l) => (
                         <a key={l.href} href={l.href} onClick={(e) => handleNavClick(e, l.href)}>
                             {l.label}

@@ -80,7 +80,7 @@ export default function SpecTable() {
     return (
         <div>
             <p className={styles.caption}>
-                {'클릭 한 번으로 정렬. 필터로 즉시 검색.\n고객사가 원하는 솔루션 스펙을 30초 안에 찾습니다.'}
+                {'Sort with a single click. Filter for instant search.\nFind the exact solution spec your team needs in under 30 seconds.'}
             </p>
 
             <div className={styles.filters}>
@@ -88,19 +88,19 @@ export default function SpecTable() {
                     className={styles.filterSelect}
                     value={tempFilter}
                     onChange={(e) => setTempFilter(e.target.value)}
-                    aria-label="동작 온도 필터"
+                    aria-label="Operating temperature filter"
                 >
-                    <option value="all">동작 온도: 전체</option>
-                    <option value="-40">-40°C 지원 (Automotive)</option>
-                    <option value="0">일반 산업 환경용</option>
+                    <option value="all">Temp Range: All</option>
+                    <option value="-40">-40°C Supported (Automotive)</option>
+                    <option value="0">Standard Industrial</option>
                 </select>
                 <select
                     className={styles.filterSelect}
                     value={protoFilter}
                     onChange={(e) => setProtoFilter(e.target.value)}
-                    aria-label="통신 인터페이스 필터"
+                    aria-label="Communication interface filter"
                 >
-                    <option value="all">통신 프로토콜: 전체</option>
+                    <option value="all">Protocol: All</option>
                     <option value="CAN-FD">CAN-FD</option>
                     <option value="GMSL2">GMSL2</option>
                     <option value="Ethernet">Ethernet</option>
@@ -108,10 +108,10 @@ export default function SpecTable() {
                 </select>
                 <input
                     className={styles.filterInput}
-                    placeholder="🔍 모델 검색"
+                    placeholder="🔍 Search model"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    aria-label="모델 검색"
+                    aria-label="Search model"
                 />
             </div>
 
@@ -138,7 +138,7 @@ export default function SpecTable() {
                         {filtered.length === 0 ? (
                             <tr>
                                 <td colSpan={6} className={styles.noResults}>
-                                    검색 결과가 없습니다.
+                                    No results found.
                                 </td>
                             </tr>
                         ) : (
@@ -152,8 +152,8 @@ export default function SpecTable() {
                                     <td>
                                         <button
                                             className={styles.downloadBtn}
-                                            onClick={() => showToast(`📥 ${p.model} 데이터시트 다운로드 시작 (데모)`)}
-                                            aria-label={`${p.model} 데이터시트 다운로드`}
+                                            onClick={() => showToast(`📥 ${p.model} datasheet download started (demo)`)}
+                                            aria-label={`Download ${p.model} datasheet`}
                                         >
                                             📥
                                         </button>

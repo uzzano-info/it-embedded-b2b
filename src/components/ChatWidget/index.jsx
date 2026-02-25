@@ -57,7 +57,7 @@ export default function ChatWidget() {
                 onClick={() => setOpen((p) => !p)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                aria-label={open ? '채팅 닫기' : 'AI 상담 열기'}
+                aria-label={open ? 'Close chat' : 'Open ADAS assistant'}
             >
                 <AnimatePresence mode="wait">
                     {open ? (
@@ -88,11 +88,11 @@ export default function ChatWidget() {
                             <div className={styles.headerInfo}>
                                 <span className={styles.headerDot} />
                                 <div>
-                                    <strong>AI 기술 상담</strong>
-                                    <span className={styles.headerStatus}>온라인 · 즉시 응답</span>
+                                    <strong>ADAS Tech Assistant</strong>
+                                    <span className={styles.headerStatus}>Online · Instant Reply</span>
                                 </div>
                             </div>
-                            <button className={styles.clearBtn} onClick={clear} title="대화 초기화">🗑️</button>
+                            <button className={styles.clearBtn} onClick={clear} title="Clear chat">🗑️</button>
                         </div>
 
                         {/* Messages */}
@@ -138,14 +138,14 @@ export default function ChatWidget() {
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 onKeyDown={handleKey}
-                                placeholder="메시지를 입력하세요..."
-                                aria-label="채팅 메시지 입력"
+                                placeholder="Type a message..."
+                                aria-label="Chat message input"
                             />
                             <button
                                 className={styles.sendBtn}
                                 onClick={handleSend}
                                 disabled={!input.trim() || isTyping}
-                                aria-label="전송"
+                                aria-label="Send"
                             >
                                 ↑
                             </button>

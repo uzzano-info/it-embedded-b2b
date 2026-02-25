@@ -9,14 +9,14 @@ export default function DatasheetHub() {
     const [toast, setToast] = useState(null)
 
     const showToast = () => {
-        setToast('데모 버전입니다. 실제 서비스에서 제공됩니다.')
+        setToast('Demo version. Available in production.')
         setTimeout(() => setToast(null), 2000)
     }
 
     return (
         <div>
             <p className={styles.caption}>
-                {"바이어가 가장 많이 하는 요청: '데이터시트 보내주세요.'\n이제 바이어가 직접 다운로드합니다. 24시간."}
+                {"The most common buyer request: 'Send me the datasheet.'\nNow buyers download directly. 24/7."}
             </p>
 
             <div className={styles.cardGrid}>
@@ -28,20 +28,20 @@ export default function DatasheetHub() {
                             {versions[i]} · PDF · {sizes[i]}
                         </div>
                         <div className={styles.dsDownloads}>
-                            📥 {p.downloads}회 다운로드
+                            📥 {p.downloads} downloads
                         </div>
                         <div className={styles.dsActions}>
                             <button
                                 className={`${styles.dsBtn} ${styles.dsBtnPrimary}`}
                                 onClick={showToast}
                             >
-                                다운로드
+                                Download
                             </button>
                             <button
                                 className={`${styles.dsBtn} ${styles.dsBtnGhost}`}
                                 onClick={showToast}
                             >
-                                미리보기
+                                Preview
                             </button>
                         </div>
                     </div>
