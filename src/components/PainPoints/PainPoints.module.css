@@ -1,0 +1,222 @@
+.section {
+    background: var(--bg-primary);
+}
+
+/* ── Grid layout ── */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+}
+
+/* ── Columns ── */
+.column {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.beforeCol {
+    border-color: rgba(255, 77, 106, 0.15);
+}
+
+.afterCol {
+    border-color: rgba(0, 214, 143, 0.15);
+}
+
+/* ── Column header ── */
+.colHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.colIcon {
+    font-size: 1.2rem;
+}
+
+.colTitle {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* ── Fake screenshot ── */
+.screenshot {
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screenshotBefore {
+    background: rgba(255, 77, 106, 0.04);
+    border: 1px dashed rgba(255, 77, 106, 0.12);
+}
+
+.screenshotAfter {
+    background: rgba(0, 214, 143, 0.04);
+    border: 1px dashed rgba(0, 214, 143, 0.12);
+}
+
+.screenshotInner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fakeNav {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.fakeLine {
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.fakeBlock {
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.fakeNavModern {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(79, 124, 255, 0.15);
+}
+
+.fakeHero {
+    width: 100%;
+    height: 36px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(79, 124, 255, 0.1), rgba(0, 214, 143, 0.08));
+}
+
+.fakeCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+}
+
+.fakeCard {
+    height: 28px;
+    border-radius: 4px;
+    background: rgba(79, 124, 255, 0.06);
+    border: 1px solid rgba(79, 124, 255, 0.08);
+}
+
+.screenshotLabel {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ── Stat rows ── */
+.statRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.statRow:last-of-type {
+    border-bottom: none;
+}
+
+.statInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.statLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.statDesc {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.statValue {
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.danger .statValue {
+    color: var(--danger);
+}
+
+.success .statValue {
+    color: var(--success);
+}
+
+.indicator {
+    font-size: 0.7rem;
+}
+
+/* Pulse animation for Before stats */
+.danger .statValue {
+    animation: dangerPulse 3s ease-in-out infinite;
+}
+
+@keyframes dangerPulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ── Caption ── */
+.caption {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .column {
+        padding: 20px;
+    }
+
+    .fakeCards {
+        grid-template-columns: 1fr 1fr;
+    }
+}

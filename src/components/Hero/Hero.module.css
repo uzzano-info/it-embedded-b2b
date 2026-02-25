@@ -1,0 +1,147 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: var(--header-height);
+}
+
+.canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.badge {
+    margin-bottom: 28px;
+}
+
+.headline {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-primary);
+    white-space: pre-line;
+    margin-bottom: 20px;
+    max-width: 800px;
+    letter-spacing: -0.02em;
+}
+
+.subheadline {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    white-space: pre-line;
+    margin-bottom: 36px;
+    max-width: 520px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Trust badges */
+.trustRow {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.trustBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.01em;
+    opacity: 0.8;
+}
+
+.trustIcon {
+    font-size: 0.9rem;
+}
+
+/* Bottom gradient fade */
+.gradientBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--bg-primary));
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1199px) {
+    .headline {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        min-height: calc(100vh - 20px);
+    }
+
+    .content {
+        padding-top: 20px;
+        padding-bottom: 60px;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+    }
+
+    .headline {
+        font-size: 1.8rem;
+        max-width: 100%;
+    }
+
+    .subheadline {
+        font-size: 1rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .trustRow {
+        gap: 12px 16px;
+    }
+
+    .trustBadge {
+        font-size: 0.7rem;
+    }
+}

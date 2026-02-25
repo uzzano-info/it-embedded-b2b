@@ -1,0 +1,42 @@
+[
+    {
+        "model": "MCU-X200",
+        "cpu": "ARM Cortex-M7",
+        "ram": "512KB",
+        "tempRange": "-40~85°C",
+        "protocol": "UART, SPI",
+        "downloads": 342
+    },
+    {
+        "model": "MCU-X300",
+        "cpu": "ARM Cortex-M33",
+        "ram": "1MB",
+        "tempRange": "-40~85°C",
+        "protocol": "SPI, I2C",
+        "downloads": 256
+    },
+    {
+        "model": "MCU-X500",
+        "cpu": "ARM Cortex-A53",
+        "ram": "2GB",
+        "tempRange": "-20~70°C",
+        "protocol": "Ethernet, CAN",
+        "downloads": 189
+    },
+    {
+        "model": "SEN-T100",
+        "cpu": "—",
+        "ram": "—",
+        "tempRange": "-40~125°C",
+        "protocol": "I2C",
+        "downloads": 421
+    },
+    {
+        "model": "GW-E400",
+        "cpu": "ARM Cortex-A72",
+        "ram": "4GB",
+        "tempRange": "0~60°C",
+        "protocol": "ETH, WiFi, BLE",
+        "downloads": 97
+    }
+]

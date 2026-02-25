@@ -1,0 +1,433 @@
+.section {
+    background: var(--bg-primary);
+}
+
+/* ── Layout ── */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    gap: 40px;
+    margin-top: 48px;
+    align-items: start;
+}
+
+/* ── Form container ── */
+.formContainer {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    order: 1;
+}
+
+/* ── Progress bar ── */
+.progressBar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    position: relative;
+    padding: 0 8px;
+}
+
+.progressStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 1;
+}
+
+.progressDot {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.progressActive .progressDot {
+    color: var(--accent);
+}
+
+.progressLabel {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.progressActive .progressLabel {
+    color: var(--text-secondary);
+}
+
+.progressTrack {
+    position: absolute;
+    top: 6px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 1px;
+    transition: width 0.4s ease;
+}
+
+/* ── Step title ── */
+.formStepTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+/* ── Fields ── */
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.req {
+    color: var(--danger);
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: border-color var(--transition-fast);
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.inputError {
+    border-color: var(--danger);
+}
+
+.error {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--danger);
+    margin-top: 4px;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ── Radio group ── */
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.radio input[type="radio"] {
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+}
+
+.radio:hover,
+.radioActive {
+    border-color: var(--accent);
+    color: var(--text-primary);
+    background: rgba(79, 124, 255, 0.04);
+}
+
+/* ── File drop ── */
+.fileDrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.fileDrop:hover {
+    border-color: var(--accent);
+    background: rgba(79, 124, 255, 0.03);
+}
+
+.fileInput {
+    display: none;
+}
+
+.filePlaceholder {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.fileName {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* ── Checkbox ── */
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+}
+
+.checkboxError {
+    color: var(--danger);
+}
+
+/* ── Actions ── */
+.formActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    gap: 12px;
+}
+
+/* ── Trust Panel ── */
+.trustPanel {
+    order: 2;
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+}
+
+.trustBlock {
+    margin-bottom: 0;
+}
+
+.trustItem {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.trustIcon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.trustItem strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.trustItem p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.trustDivider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+}
+
+.trustTitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.trustSteps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trustSteps li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.stepNum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(79, 124, 255, 0.1);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.trustCopy {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.kakaoBtn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background: #FEE500;
+    color: #1A1A1A;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.kakaoBtn:hover {
+    background: #E6CF00;
+    color: #1A1A1A;
+}
+
+/* ── Success state ── */
+.successCard {
+    text-align: center;
+    padding: 80px 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.successCheck {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.successTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.successText {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    white-space: pre-line;
+    margin-bottom: 20px;
+}
+
+.successId {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(79, 124, 255, 0.08);
+    border: 1px solid rgba(79, 124, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+.demoNote {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1199px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .trustPanel {
+        order: 0;
+        position: static;
+    }
+
+    .formContainer {
+        order: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .formContainer {
+        padding: 20px;
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formActions {
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    .formActions .accent-btn,
+    .formActions .ghost-btn {
+        width: 100%;
+    }
+
+    .successCard {
+        padding: 48px 24px;
+    }
+}

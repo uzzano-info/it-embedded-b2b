@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0A0E1A"/>
+  <path d="M8 8 L16 4 L24 8 L24 24 L16 28 L8 24 Z" fill="none" stroke="#4F7CFF" stroke-width="1.5"/>
+  <path d="M16 4 L16 28" stroke="#4F7CFF" stroke-width="1" opacity="0.5"/>
+  <path d="M8 8 L24 8" stroke="#4F7CFF" stroke-width="1" opacity="0.5"/>
+  <path d="M8 24 L24 24" stroke="#4F7CFF" stroke-width="1" opacity="0.5"/>
+  <text x="16" y="19" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="800" fill="white">IT</text>
+</svg>
