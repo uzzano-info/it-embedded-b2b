@@ -4,19 +4,19 @@ import useCountUp from '../../hooks/useCountUp'
 import styles from './PainPoints.module.css'
 
 const beforeStats = [
-    { label: '로딩 속도', desc: '평균 로딩', value: '4.2초', status: 'danger' },
-    { label: '문의 응답', desc: 'RFQ 첫 응답', value: '다음 영업일', status: 'danger' },
-    { label: '데이터시트', desc: '스펙 접근성', value: 'PDF 링크 깨짐', status: 'danger' },
-    { label: '해외 바이어', desc: '이탈률', value: '78%', status: 'danger', numeric: 78 },
-    { label: '리드 관리', desc: '추적 체계', value: '없음', status: 'danger' },
+    { label: '인지 성능', desc: '야간/악천후', value: '저하', status: 'danger' },
+    { label: '데이터 처리', desc: '지연 시간', value: '100ms 이상', status: 'danger', numeric: 100, suffix: 'ms 이상' },
+    { label: '안전 규격', desc: 'ISO 26262', value: '개발 지연', status: 'danger' },
+    { label: '상용화', desc: '자체 개발 시', value: '평균 3년', status: 'danger', numeric: 3, suffix: '년' },
+    { label: '차량 통합', desc: '제어 시스템', value: '호환성 부족', status: 'danger' },
 ]
 
 const afterStats = [
-    { label: '로딩 속도', desc: '평균 로딩', value: '0.8초', status: 'success', numeric: 0.8, suffix: '초', decimals: 1 },
-    { label: '문의 응답', desc: 'RFQ 첫 응답', value: '3초 (자동)', status: 'success', numeric: 3, suffix: '초 (자동)' },
-    { label: '데이터시트', desc: '스펙 접근성', value: '1-클릭 즉시 열람', status: 'success' },
-    { label: '해외 바이어', desc: '전환율', value: '+340%', status: 'success', numeric: 340, prefix: '+', suffix: '%' },
-    { label: '리드 관리', desc: '추적 체계', value: 'CRM 자동 기록', status: 'success' },
+    { label: '인지 성능', desc: '야간/악천후', value: '정밀 탐지', status: 'success' },
+    { label: '데이터 처리', desc: '지연 시간', value: '< 10ms', status: 'success', numeric: 10, prefix: '< ', suffix: 'ms' },
+    { label: '안전 규격', desc: 'ISO 26262', value: 'ASIL-D 레디', status: 'success' },
+    { label: '상용화', desc: '솔루션 도입 시', value: '6개월 이내', status: 'success', numeric: 6, suffix: '개월 이내' },
+    { label: '차량 통합', desc: '제어 시스템', value: 'CAN/Ethernet', status: 'success' },
 ]
 
 function StatRow({ stat, inView, side }) {
@@ -74,12 +74,12 @@ export default function PainPoints() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="section-label">현실 진단</span>
+                    <span className="section-label">ADAS 개발의 병목 현상</span>
                     <h2 className="section-headline">
-                        {'세계 수준의 임베디드 기술을 만들고 계십니다.\n그런데 웹사이트는 2018년에 멈춰 있습니다.'}
+                        {'독자적인 ADAS 구축에는\n막대한 리소스와 시간이 소모됩니다.'}
                     </h2>
                     <p className="section-subtext">
-                        {'해외 바이어가 귀사 제품을 검색했을 때 보는 것은\n최첨단 기술력이 아니라, 느리고 낡은 웹페이지입니다.\n그 3초 안에 바이어는 경쟁사로 이동합니다.'}
+                        {'카메라, 라이다, 레이더 등 방대한 멀티 센서 데이터를 지연 없이 처리하고,\n가장 높은 수준의 글로벌 안전 규격을 충족하는 것은\n많은 글로벌 OEM과 Tier-1들이 겪고 있는 과제입니다.'}
                     </p>
                 </motion.div>
 
@@ -97,7 +97,7 @@ export default function PainPoints() {
                     >
                         <div className={styles.colHeader}>
                             <span className={styles.colIcon}>❌</span>
-                            <span className={styles.colTitle}>YOUR SITE TODAY</span>
+                            <span className={styles.colTitle}>기존 개발 환경의 한계</span>
                         </div>
                         <div className={styles.screenshot + ' ' + styles.screenshotBefore}>
                             <div className={styles.screenshotInner}>
@@ -107,13 +107,13 @@ export default function PainPoints() {
                                 <div className={styles.fakeBlock}></div>
                                 <div className={styles.fakeLine} style={{ width: '60%' }}></div>
                             </div>
-                            <span className={styles.screenshotLabel}>기존 B2B 사이트</span>
+                            <span className={styles.screenshotLabel}>레거시 비전 시스템</span>
                         </div>
                         {beforeStats.map((s, i) => (
                             <StatRow key={i} stat={s} inView={inView} side="before" />
                         ))}
                         <p className={styles.caption}>
-                            지금 귀사 웹사이트에서 일어나고 있는 일입니다.
+                            자체 구축 시 마주하는 상용화의 한계점입니다.
                         </p>
                     </motion.div>
 
@@ -125,7 +125,7 @@ export default function PainPoints() {
                     >
                         <div className={styles.colHeader}>
                             <span className={styles.colIcon}>✅</span>
-                            <span className={styles.colTitle}>WITH AUTOMATION</span>
+                            <span className={styles.colTitle}>AUTO-ADAS 솔루션 도입 후</span>
                         </div>
                         <div className={styles.screenshot + ' ' + styles.screenshotAfter}>
                             <div className={styles.screenshotInner}>
@@ -137,13 +137,13 @@ export default function PainPoints() {
                                     <div className={styles.fakeCard}></div>
                                 </div>
                             </div>
-                            <span className={styles.screenshotLabel}>자동화 인프라</span>
+                            <span className={styles.screenshotLabel}>통합 엣지 AI 퓨전</span>
                         </div>
                         {afterStats.map((s, i) => (
                             <StatRow key={i} stat={s} inView={inView} side="after" />
                         ))}
                         <p className={styles.caption}>
-                            자동화 인프라 적용 후 기대 수치입니다.
+                            검증된 솔루션 도입으로 확보 가능한 성과입니다.
                         </p>
                     </motion.div>
                 </motion.div>

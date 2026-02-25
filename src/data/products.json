@@ -1,42 +1,42 @@
 [
     {
-        "model": "MCU-X200",
-        "cpu": "ARM Cortex-M7",
-        "ram": "512KB",
+        "model": "AUTO-Edge V1",
+        "cpu": "NVIDIA Orin Nano",
+        "ram": "8GB LPDDR5",
         "tempRange": "-40~85°C",
-        "protocol": "UART, SPI",
+        "protocol": "CAN-FD, GMSL2",
         "downloads": 342
     },
     {
-        "model": "MCU-X300",
-        "cpu": "ARM Cortex-M33",
-        "ram": "1MB",
+        "model": "AUTO-Edge V2",
+        "cpu": "NVIDIA Orin NX",
+        "ram": "16GB LPDDR5",
         "tempRange": "-40~85°C",
-        "protocol": "SPI, I2C",
+        "protocol": "CAN-FD, GMSL2",
         "downloads": 256
     },
     {
-        "model": "MCU-X500",
-        "cpu": "ARM Cortex-A53",
-        "ram": "2GB",
-        "tempRange": "-20~70°C",
-        "protocol": "Ethernet, CAN",
+        "model": "AUTO-Fusion F1",
+        "cpu": "Qualcomm Snapdragon Ride",
+        "ram": "32GB LPDDR5",
+        "tempRange": "-40~105°C",
+        "protocol": "CAN-FD, Ethernet",
         "downloads": 189
     },
     {
-        "model": "SEN-T100",
-        "cpu": "—",
-        "ram": "—",
+        "model": "AUTO-Radar R1",
+        "cpu": "NXP S32R",
+        "ram": "512MB RAM",
         "tempRange": "-40~125°C",
-        "protocol": "I2C",
+        "protocol": "CAN-FD, 100BASE-T1",
         "downloads": 421
     },
     {
-        "model": "GW-E400",
-        "cpu": "ARM Cortex-A72",
-        "ram": "4GB",
-        "tempRange": "0~60°C",
-        "protocol": "ETH, WiFi, BLE",
+        "model": "AUTO-Vision C1",
+        "cpu": "Ambarella CV22",
+        "ram": "4GB LPDDR4",
+        "tempRange": "-40~105°C",
+        "protocol": "GMSL2, FPD-Link III",
         "downloads": 97
     }
 ]

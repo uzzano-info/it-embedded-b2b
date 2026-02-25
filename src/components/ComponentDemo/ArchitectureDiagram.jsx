@@ -2,11 +2,11 @@ import { useState } from 'react'
 import styles from './ComponentDemo.module.css'
 
 const nodes = [
-    { id: 'sensor', icon: '📡', label: 'IoT Sensor', x: 60, y: 100, specs: 'Temp/Humidity Sensor\nI2C Interface, -40~85°C\n저전력 3.3V 동작' },
-    { id: 'gateway', icon: '🔌', label: 'Edge Gateway', x: 260, y: 100, specs: 'ARM Cortex-A53\nEthernet + WiFi + BLE\n데이터 전처리 & 버퍼링' },
-    { id: 'cloud', icon: '☁️', label: 'Cloud Server', x: 460, y: 100, specs: 'AWS / Azure IoT Hub\nMQTT 프로토콜\n실시간 데이터 스트리밍' },
-    { id: 'dashboard', icon: '📊', label: 'Dashboard', x: 660, y: 100, specs: 'React 기반 웹 대시보드\n실시간 차트 & 알림\n권한별 접근 제어' },
-    { id: 'mobile', icon: '📱', label: 'Mobile App', x: 860, y: 100, specs: 'React Native 앱\n푸시 알림\nOTA 펌웨어 업데이트' },
+    { id: 'sensor', icon: '📡', label: 'Sensor Array', x: 60, y: 100, specs: 'LiDAR, 4D Radar, Camera\nGMSL2 / FPD-Link III\nTime-synchronized Data' },
+    { id: 'gateway', icon: '⚙️', label: 'Sensor Fusion', x: 260, y: 100, specs: 'NVIDIA Orin / Snapdragon\n실시간 3D Point-cloud\n딥러닝 멀티 객체 추적 (MOT)' },
+    { id: 'cloud', icon: '🧠', label: 'Path Planning', x: 460, y: 100, specs: 'AI 기반 의도 예측\n충돌 회피(AEB) 경로 생성\n< 10ms 초저지연 연산' },
+    { id: 'dashboard', icon: '🚙', label: 'Vehicle Control', x: 660, y: 100, specs: '조향/가감속 제어 (MCU)\nCAN-FD 안전 통신\nAUTOSAR Classic OS' },
+    { id: 'mobile', icon: '📱', label: 'Digital Cockpit', x: 860, y: 100, specs: '운전자 HMI 디스플레이\nAR HUD 연동 데이터\n상황별 시/청각 통합 경고' },
 ]
 
 const connections = [
@@ -24,11 +24,11 @@ export default function ArchitectureDiagram() {
     return (
         <div>
             <p className={styles.caption}>
-                {'제품의 시스템 아키텍처를 인터랙티브하게 보여줍니다.\n노드를 hover하면 상세 스펙이 표시됩니다.'}
+                {'실시간 센서 퓨전부터 차량 제어까지의 파이프라인 아키텍처입니다.\n노드에 마우스를 올리면 세부 기술 스택이 표시됩니다.'}
             </p>
 
             <div className={styles.archContainer}>
-                <svg viewBox="0 0 960 200" className={styles.archSvg} aria-label="IoT 시스템 아키텍처 다이어그램">
+                <svg viewBox="0 0 960 200" className={styles.archSvg} aria-label="ADAS 시스템 퓨전 아키텍처 다이어그램">
                     {/* Connection lines */}
                     {connections.map((c, i) => {
                         const from = getNode(c.from)

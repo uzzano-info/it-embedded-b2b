@@ -4,10 +4,10 @@ import styles from './ComponentDemo.module.css'
 
 const columns = [
     { key: 'model', label: 'Model' },
-    { key: 'cpu', label: 'CPU' },
-    { key: 'ram', label: 'RAM' },
+    { key: 'cpu', label: 'Processor' },
+    { key: 'ram', label: 'Memory' },
     { key: 'tempRange', label: 'Temp Range' },
-    { key: 'protocol', label: 'Protocol' },
+    { key: 'protocol', label: 'Interface' },
 ]
 
 export default function SpecTable() {
@@ -80,7 +80,7 @@ export default function SpecTable() {
     return (
         <div>
             <p className={styles.caption}>
-                {'클릭 한 번으로 정렬. 필터로 즉시 검색.\n바이어가 원하는 MCU를 30초 안에 찾습니다.'}
+                {'클릭 한 번으로 정렬. 필터로 즉시 검색.\n고객사가 원하는 솔루션 스펙을 30초 안에 찾습니다.'}
             </p>
 
             <div className={styles.filters}>
@@ -91,21 +91,20 @@ export default function SpecTable() {
                     aria-label="동작 온도 필터"
                 >
                     <option value="all">동작 온도: 전체</option>
-                    <option value="-40">-40°C 이상</option>
-                    <option value="0">0°C 이상</option>
+                    <option value="-40">-40°C 지원 (Automotive)</option>
+                    <option value="0">일반 산업 환경용</option>
                 </select>
                 <select
                     className={styles.filterSelect}
                     value={protoFilter}
                     onChange={(e) => setProtoFilter(e.target.value)}
-                    aria-label="통신 프로토콜 필터"
+                    aria-label="통신 인터페이스 필터"
                 >
                     <option value="all">통신 프로토콜: 전체</option>
-                    <option value="UART">UART</option>
-                    <option value="SPI">SPI</option>
-                    <option value="I2C">I2C</option>
+                    <option value="CAN-FD">CAN-FD</option>
+                    <option value="GMSL2">GMSL2</option>
                     <option value="Ethernet">Ethernet</option>
-                    <option value="CAN">CAN</option>
+                    <option value="FPD-Link">FPD-Link III</option>
                 </select>
                 <input
                     className={styles.filterInput}

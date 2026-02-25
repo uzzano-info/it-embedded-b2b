@@ -2,50 +2,49 @@ import styles from './Features.module.css'
 
 const features = [
     {
-        title: '기술 사양 자동 응답',
-        desc: '동작 온도, 입력 전압, 통신 프로토콜 — 학습된 스펙 기반으로 즉시 답변합니다.',
+        title: '초정밀 센서 기술 사양 즉시 응답',
+        desc: 'FOV, Point cloud 해상도, 연산 성능 등 엔지니어의 디테일한 기술 질문에 답변합니다.',
     },
     {
-        title: '데이터시트 즉시 제공',
-        desc: "'MCU-X200 데이터시트 보여줘' → PDF 링크 또는 인라인 스펙 테이블 자동 제공.",
+        title: '1-클릭 데이터시트 제공',
+        desc: "'초저지연 AI 보드 데이터시트 줘' → 최신 PDF 링크 바로 제공.",
     },
     {
-        title: '다국어 지원 (한/영)',
-        desc: '바이어의 언어를 자동 감지하여 한국어 또는 영어로 응답합니다.',
+        title: '프로토콜 및 아키텍처 가이드',
+        desc: 'CAN-FD 연동 방법, 센서 마운팅 위치 권장 가이드 등 기술 레퍼런스 제시.',
     },
     {
-        title: '복잡한 문의 → 담당자 즉시 연결',
-        desc: '커스텀 펌웨어, 대량 발주 등 AI가 판단할 수 없는 문의는 자동으로 담당자에게 전달.',
+        title: 'PoC 및 커스텀 로직 담당자 연결',
+        desc: '특수 로직 통합이나 양산형 모델 가격 문의는 담당 영업/엔지니어에게 라우팅.',
     },
 ]
 
 const preloadedMessages = [
-    { role: 'user', content: 'MCU-X200의 동작 온도 범위가 어떻게 되나요?' },
+    { role: 'user', content: 'ISO 26262 ASIL-D 인증을 위한 문서화 지원이 되나요?' },
     {
         role: 'bot',
-        content: 'MCU-X200의 동작 온도 범위는 -40°C ~ +85°C (산업용 등급)입니다.',
+        content: '네, 제공되는 풀 ADAS 통합 보드는 ISO 26262 ASIL-D 규격을 만족하며, 인증 대응을 위한 필수 산출물을 함께 제공합니다.',
         specs: [
-            'CPU: ARM Cortex-M7, 480MHz',
-            'RAM: 512KB SRAM',
-            '통신: UART, SPI, I2C, Ethernet',
-            '인증: CE, FCC, KC',
+            'ASIL-D 지원 락스텝 코어',
+            'ISO/SAE 21434 사이버 보안 대응',
+            'AUTOSAR Classic/Adaptive 지원',
         ],
-        download: '📎 데이터시트 다운로드 (PDF, 2.4MB)',
+        download: '📎 기능 안전 가이드북 (PDF, 5.1MB)',
     },
 ]
 
 const suggestedPrompts = [
-    '입력 전압 범위는?',
-    'MOQ가 어떻게 되나요?',
-    '데이터시트 보내줘',
-    '커스텀 펌웨어 가능한가요?',
+    '통합 보드 발열량은?',
+    '기존 레이더와 호환되나요?',
+    '데이터시트 다운로드',
+    'PoC 진행 절차 안내',
 ]
 
 export default function AIChatbotTab() {
     return (
         <div>
             <p className={styles.tabHeadline}>
-                {'새벽 3시, 독일 바이어가 데이터시트를 요청합니다.\nAI가 즉시 응대합니다.'}
+                {'글로벌 OEM 엔지니어의 스펙 문의부터\nASIL 인증 여부까지, AI가 즉시 답변합니다.'}
             </p>
 
             <div className={styles.twoCol}>

@@ -12,10 +12,10 @@ const fadeUp = {
 }
 
 const trustBadges = [
-    { icon: '🏆', label: 'Lighthouse 98점' },
-    { icon: '⚡', label: 'LCP 0.8초' },
-    { icon: '🔔', label: '리드 응답 3초' },
-    { icon: '⚛️', label: 'React + Vercel Edge' },
+    { icon: '🏆', label: 'ISO 26262 ASIL-D' },
+    { icon: '⚡', label: '초저지연 < 10ms' },
+    { icon: '🔔', label: '다중 센서 퓨전 지원' },
+    { icon: '⚛️', label: '엣지 AI 최적화' },
 ]
 
 export default function Hero() {
@@ -150,23 +150,23 @@ export default function Hero() {
                     className={`badge ${styles.badge}`}
                     variants={fadeUp} initial="hidden" animate="visible" custom={0}
                 >
-                    디자인 미팅 0회. 통화 0건. 결과물만 전달합니다.
+                    차세대 모빌리티 ADAS 핵심 기술
                 </motion.span>
 
                 <motion.h1
                     className={styles.headline}
                     variants={fadeUp} initial="hidden" animate="visible" custom={1}
                 >
-                    귀사의 B2B 웹사이트를{'\n'}
-                    24시간 자동 영업 인프라로 전환합니다.
+                    차세대 모빌리티를 위한{'\n'}
+                    초정밀 자율주행 ADAS 솔루션
                 </motion.h1>
 
                 <motion.p
                     className={styles.subheadline}
                     variants={fadeUp} initial="hidden" animate="visible" custom={2}
                 >
-                    MCU 스펙시트부터 RFQ 자동 접수까지.{'\n'}
-                    디자인 미팅 없이, 5일 안에 완성합니다.
+                    멀티 센서 퓨전과 실시간 엣지 AI를 결합하여{'\n'}
+                    가장 안전하고 직관적인 인지, 판단, 제어 시스템을 제공합니다.
                 </motion.p>
 
                 <motion.div
@@ -174,10 +174,10 @@ export default function Hero() {
                     variants={fadeUp} initial="hidden" animate="visible" custom={3}
                 >
                     <a href="#contact" className="accent-btn" onClick={(e) => scrollTo(e, '#contact')}>
-                        무료 사이트 진단 신청하기
+                        PoC 프로젝트 신청하기
                     </a>
-                    <a href="#features" className="ghost-btn" onClick={(e) => scrollTo(e, '#features')}>
-                        시스템 데모 보기 →
+                    <a href="#demo" className="ghost-btn" onClick={(e) => scrollTo(e, '#demo')}>
+                        기술 사양서 다운로드 →
                     </a>
                 </motion.div>
 

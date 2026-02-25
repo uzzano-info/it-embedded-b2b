@@ -101,7 +101,7 @@ export default function ConversionForm() {
                         <h3 className={styles.successTitle}>접수 완료!</h3>
                         <p className={styles.successText}>
                             대표님의 카카오톡으로 접수 확인 알림이 전송되었습니다.{'\n'}
-                            24시간 내에 무료 진단 리포트를 보내드리겠습니다.
+                            24시간 내에 전담 엔지니어가 기술 검토 후 회신드리겠습니다.
                         </p>
                         <span className={`${styles.successId} mono`}>#{inquiryId}</span>
                         {result.demo && <p className={styles.demoNote}>* 데모 모드 — Vercel 배포 시 실제 API가 연동됩니다.</p>}
@@ -119,12 +119,12 @@ export default function ConversionForm() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="section-label">무료 진단 신청</span>
+                    <span className="section-label">기술 상담 및 PoC 문의</span>
                     <h2 className="section-headline">
-                        귀사 웹사이트의 현재 상태를 무료로 진단합니다.
+                        ADAS 솔루션 통합 및 양산 관련 기술 문의를 남겨주세요.
                     </h2>
                     <p className="section-subtext">
-                        {'아래 정보를 입력하시면 24시간 내에\n귀사 웹사이트 진단 리포트를 보내드립니다.\n부담 없이 확인만 해보세요.'}
+                        {'아래 정보를 입력하시면 24시간 내에\n전담 엔지니어가 기술 사양서 및 데모 일정을 안내해 드립니다.\n간단한 폼으로 바로 시작하세요.'}
                     </p>
                 </motion.div>
 
@@ -135,22 +135,22 @@ export default function ConversionForm() {
                             <div className={styles.trustItem}>
                                 <span className={styles.trustIcon}>✅</span>
                                 <div>
-                                    <strong>디자인 미팅 0회</strong>
-                                    <p>비동기로만 진행합니다.</p>
+                                    <strong>엔지니어 직접 대응</strong>
+                                    <p>기술 전문가가 초기부터 배정됩니다.</p>
                                 </div>
                             </div>
                             <div className={styles.trustItem}>
                                 <span className={styles.trustIcon}>✅</span>
                                 <div>
-                                    <strong>5영업일 완성</strong>
-                                    <p>명확한 일정, 지연 없음.</p>
+                                    <strong>안전한 PoC 검증</strong>
+                                    <p>상호 신뢰를 위해 NDA를 기반으로 합니다.</p>
                                 </div>
                             </div>
                             <div className={styles.trustItem}>
                                 <span className={styles.trustIcon}>✅</span>
                                 <div>
-                                    <strong>고정 가격제</strong>
-                                    <p>추가 비용이 발생하지 않습니다.</p>
+                                    <strong>모듈형 솔루션</strong>
+                                    <p>S/W 단독 탑재도 완벽하게 지원합니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -160,9 +160,9 @@ export default function ConversionForm() {
                         <div className={styles.trustBlock}>
                             <h4 className={styles.trustTitle}>접수 후 절차</h4>
                             <ol className={styles.trustSteps}>
-                                <li><span className={styles.stepNum}>1</span> 제출 즉시 카카오톡으로 접수 확인 발송</li>
-                                <li><span className={styles.stepNum}>2</span> 24시간 내 무료 진단 리포트 전달</li>
-                                <li><span className={styles.stepNum}>3</span> 리포트 확인 후 진행 여부 결정 (부담 없음)</li>
+                                <li><span className={styles.stepNum}>1</span> 문의 접수 즉시 알림 발송</li>
+                                <li><span className={styles.stepNum}>2</span> 24시간 내 기술 담당자 배정 및 데모 안내</li>
+                                <li><span className={styles.stepNum}>3</span> NDA 체결 및 맞춤형 솔루션 검토</li>
                             </ol>
                         </div>
 
@@ -184,7 +184,7 @@ export default function ConversionForm() {
                                 <div key={s} className={`${styles.progressStep} ${s <= step ? styles.progressActive : ''}`}>
                                     <span className={styles.progressDot}>{s <= step ? '●' : '○'}</span>
                                     <span className={styles.progressLabel}>
-                                        {s === 1 ? '기본 정보' : s === 2 ? '프로젝트' : '제출'}
+                                        {s === 1 ? '기본 정보' : s === 2 ? '도입 목적' : '제출'}
                                     </span>
                                 </div>
                             ))}
@@ -229,16 +229,16 @@ export default function ConversionForm() {
                                 <motion.div key="step2" custom={dir} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
                                     <h3 className={styles.formStepTitle}>프로젝트 정보 (2/3)</h3>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>현재 웹사이트 URL</label>
-                                        <input className={styles.input} value={form.websiteUrl} onChange={(e) => set('websiteUrl', e.target.value)} placeholder="https://your-company.com" />
+                                        <label className={styles.label}>차량/보드 플랫폼 (선택)</label>
+                                        <input className={styles.input} value={form.websiteUrl} onChange={(e) => set('websiteUrl', e.target.value)} placeholder="예) Linux, QNX, Orin Nano 탑재 차량" />
                                     </div>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>문의 유형 <span className={styles.req}>*</span></label>
+                                        <label className={styles.label}>관심 솔루션 <span className={styles.req}>*</span></label>
                                         <div className={styles.radioGroup}>
                                             {[
-                                                ['new', '신규 제작 (New Build)'],
-                                                ['renewal', '리뉴얼 (Renewal)'],
-                                                ['automation', '자동화 추가 (Add Automation Only)'],
+                                                ['sensorFusion', '센서 퓨전 모듈 (Sensor Fusion Module)'],
+                                                ['edgeAi', '초저지연 엣지 AI 보드 (Edge AI Board)'],
+                                                ['fullAdas', '풀 ADAS 시스템 (Full ADAS System)'],
                                             ].map(([val, label]) => (
                                                 <label key={val} className={`${styles.radio} ${form.inquiryType === val ? styles.radioActive : ''}`}>
                                                     <input type="radio" name="inquiryType" value={val} checked={form.inquiryType === val} onChange={(e) => set('inquiryType', e.target.value)} />
@@ -249,13 +249,13 @@ export default function ConversionForm() {
                                         {errors.inquiryType && <span className={styles.error}>{errors.inquiryType}</span>}
                                     </div>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>예상 예산</label>
+                                        <label className={styles.label}>목표 양산 시점</label>
                                         <div className={styles.radioGroup}>
                                             {[
-                                                ['500', '~500만원'],
-                                                ['1000', '500~1,000만원'],
-                                                ['1000+', '1,000만원 이상'],
-                                                ['undecided', '미정 (상담 후 결정)'],
+                                                ['6mo', '6개월 이내'],
+                                                ['1yr', '1년 이내'],
+                                                ['2yr', '1~2년 이내'],
+                                                ['undecided', '미정 (선행 연구 단계)'],
                                             ].map(([val, label]) => (
                                                 <label key={val} className={`${styles.radio} ${form.budget === val ? styles.radioActive : ''}`}>
                                                     <input type="radio" name="budget" value={val} checked={form.budget === val} onChange={(e) => set('budget', e.target.value)} />
@@ -300,7 +300,7 @@ export default function ConversionForm() {
                                     <div className={styles.formActions}>
                                         <button className="ghost-btn" onClick={prev}>← 이전</button>
                                         <button className="accent-btn" onClick={handleSubmit} disabled={loading}>
-                                            {loading ? '⏳ 접수 중...' : '🚀 무료 진단 신청하기'}
+                                            {loading ? '⏳ 접수 중...' : '🚀 데모 브리핑 신청하기'}
                                         </button>
                                     </div>
                                 </motion.div>

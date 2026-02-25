@@ -43,7 +43,7 @@ export default function Header() {
                     onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
                     aria-label="페이지 상단으로"
                 >
-                    ▲ IT-B2B
+                    ▲ AUTO-ADAS
                 </a>
 
                 <nav className={styles.nav} aria-label="메인 내비게이션">

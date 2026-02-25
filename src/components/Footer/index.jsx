@@ -28,11 +28,11 @@ export default function Footer() {
                 <div className={styles.top}>
                     <div className={styles.brand}>
                         <a href="#" className={styles.logo} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
-                            ▲ IT-B2B
+                            ▲ AUTO-ADAS
                         </a>
                         <p className={styles.brandDesc}>
-                            B2B 임베디드 기업을 위한 자동화 웹 인프라.{'\n'}
-                            디자인 미팅 0회. 5일 완성.
+                            차세대 모빌리티를 위한 초정밀 ADAS 솔루션.{'\n'}
+                            멀티 센서 퓨전과 실시간 엣지 AI.
                         </p>
                     </div>
 
@@ -62,7 +62,7 @@ export default function Footer() {
                 <div className={styles.divider} />
 
                 <div className={styles.bottom}>
-                    <p className={styles.copy}>© {year} IT Embedded. Built with React + Vercel.</p>
+                    <p className={styles.copy}>© {year} AUTO-ADAS. Powered by Edge AI.</p>
                     <div className={styles.links}>
                         <a href="#">개인정보처리방침</a>
                         <a href="#">이용약관</a>

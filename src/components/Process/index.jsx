@@ -5,25 +5,25 @@ import styles from './Process.module.css'
 
 const steps = [
     {
-        icon: '📤',
-        title: '자료 전달',
-        subtitle: 'Submit Materials',
-        desc: '기존 사이트 URL, 제품 PDF,\n로고 파일을 카카오톡 또는\n이메일로 전달해 주세요.\n미팅은 없습니다.',
-        badge: 'Day 0',
+        icon: '📝',
+        title: '요구사항 분석 및 NDA',
+        subtitle: 'Requirements & NDA',
+        desc: '타겟 ADAS 레벨 및 센서 구성\n요구사항 정의 (FOV, 해상도 등)\n기술 보호를 위한 상호 NDA 체결.',
+        badge: 'Phase 1',
     },
     {
         icon: '⚙️',
-        title: '시스템 구축',
-        subtitle: 'System Build',
-        desc: 'React + Vercel 기반 웹사이트,\nn8n 자동화 워크플로우,\nAI 챗봇을 구축합니다.\n중간 확인 1회. 비동기 피드백.',
-        badge: 'Day 1–4',
+        title: 'PoC 기구 설계 및 통합',
+        subtitle: 'PoC & Integration',
+        desc: '고객사 차량 플랫폼 맞춤형 튜닝,\n딥러닝 아키텍처 최적화 및\n초저지연 퓨전 소프트웨어 포팅.',
+        badge: 'Phase 2',
     },
     {
         icon: '🚀',
-        title: '런칭 & 인수인계',
-        subtitle: 'Launch & Handover',
-        desc: 'Vercel 배포, 도메인 연결,\nn8n 워크플로우 활성화,\nAI 챗봇 라이브.\n즉시 리드 수집 시작.',
-        badge: 'Day 5',
+        title: '실차 검증 및 양산',
+        subtitle: 'Validation & Mass Prod',
+        desc: '환경 및 실차 테스트 (HIL/SIL),\n기능 안전 (ASIL) 인증 서포트,\n안정적인 양산 라인 연계 지원.',
+        badge: 'Phase 3',
     },
 ]
 
@@ -49,10 +49,10 @@ export default function Process() {
                 >
                     <span className="section-label">진행 방식</span>
                     <h2 className="section-headline">
-                        {'미팅 없이 완성합니다.\n대표님은 자료만 보내주시면 됩니다.'}
+                        {'모빌리티 혁신을 위한 파트너.\n신뢰할 수 있는 개발 및 양산 프로세스.'}
                     </h2>
                     <p className="section-subtext">
-                        {'기존 웹사이트 URL, 제품 카탈로그 PDF, 로고 파일.\n이 세 가지만 보내주시면 5일 안에 완성된 시스템을 전달합니다.\n과정 중 전화 통화는 0건입니다.'}
+                        {'상호 기밀 유지 체결(NDA)부터 초기 PoC, 혹독한 실차 검증, 그리고 최종 양산까지.\n글로벌 최고 수준의 엔지니어들이 함께합니다.'}
                     </p>
                 </motion.div>
 
@@ -101,10 +101,10 @@ export default function Process() {
                     transition={{ delay: 1.2, duration: 0.6 }}
                 >
                     <p className={styles.quoteText}>
-                        "전체 과정에서 통화 0건. 카카오톡 메시지 3번으로 끝났습니다. 런칭 다음 날 첫 해외 문의가 들어왔습니다."
+                        "AUTO-ADAS의 멀티 센서 퓨전 기술 덕분에 엣지 단의 개발 리소스를 40% 이상 절감했고, ASIL 규격 대응을 완벽히 마칠 수 있었습니다."
                     </p>
                     <cite className={styles.quoteAuthor}>
-                        — 이OO 대표, OO전자 (임베디드 보드 제조)
+                        — K사 최고기술책임자(CTO) / 글로벌 최고 협력사
                     </cite>
                 </motion.blockquote>
             </div>

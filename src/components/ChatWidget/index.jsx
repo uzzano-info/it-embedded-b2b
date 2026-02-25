@@ -4,10 +4,10 @@ import useChatbot from '../../hooks/useChatbot'
 import styles from './ChatWidget.module.css'
 
 const SUGGESTED = [
-    'MCU-X200 스펙',
-    'MOQ가 어떻게 되나요?',
-    '리드타임 확인',
-    '가격 문의',
+    'AUTO-Edge V2 스펙',
+    'PoC/데모 일정 안내',
+    'ASIL 인증 지원 문서',
+    '샘플 발주 MOQ',
 ]
 
 export default function ChatWidget() {

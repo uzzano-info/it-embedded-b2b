@@ -33,14 +33,14 @@ function generateResponse(query) {
     if (faq) return faq.answer
 
     // Default fallback
-    return '죄송합니다. 해당 질문에 대한 정보를 찾지 못했습니다.\n\n다음을 시도해 보세요:\n· 제품명을 포함해서 질문 (예: "MCU-X200 스펙")\n· MOQ, 가격, 리드타임 등 키워드 사용\n\n또는 담당자에게 직접 문의:\n📧 sales@itembedded.com\n💬 카카오톡 채널'
+    return '해당 기술 문서에 대한 상세 정보를 찾을 수 없습니다.\n\n다음을 시도해 보세요:\n· 솔루션명으로 질문 (예: "AUTO-Edge V2 스펙")\n· 질문 키워드 (PoC, ASIL, 커스텀 하드웨어, 문서화)\n\n또는 양산 엔지니어에게 다이렉트로 문의하세요:\n📧 sales@auto-adas.com'
 }
 
 const INITIAL_MESSAGES = [
     {
         id: 'welcome',
         role: 'bot',
-        text: '안녕하세요! 👋\nIT Embedded AI 기술 상담 봇입니다.\n\n제품 스펙, MOQ, 가격 등을 물어보세요.\n예: "MCU-X200 스펙 알려줘"',
+        text: '안녕하세요! 👋\nAUTO-ADAS 엔지니어 전용 기술 봇입니다.\n\nEdge AI 보드의 스펙, PoC 과정, 기능안전 인증(ASIL) 문서 등을 즉각적으로 열람해 보세요.\n예: "오린 NX 엣지보드 스펙"',
         time: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
     },
 ]

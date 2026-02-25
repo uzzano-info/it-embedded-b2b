@@ -7,9 +7,9 @@ import AIChatbotTab from './AIChatbotTab'
 import styles from './Features.module.css'
 
 const tabs = [
-    { id: 'speed', label: '⚡ 속도 & 성능' },
-    { id: 'automation', label: '🔄 자동화 워크플로우' },
-    { id: 'chatbot', label: '🤖 AI 고객 응대' },
+    { id: 'speed', label: '⚡ 초저지연 엣지 AI 컴퓨팅' },
+    { id: 'automation', label: '🔄 AI 기반 멀티 센서 퓨전' },
+    { id: 'chatbot', label: '🤖 글로벌 전장 규격 신뢰성' },
 ]
 
 const tabContent = {
@@ -31,12 +31,12 @@ export default function Features() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="section-label">핵심 시스템 스택</span>
+                    <span className="section-label">핵심 스택 및 아키텍처</span>
                     <h2 className="section-headline">
-                        {"이것은 '웹 디자인'이 아닙니다.\n귀사의 영업 운영체제입니다."}
+                        {"단순한 인지 알고리즘이 아닙니다.\n완전한 자율주행을 위한 두뇌입니다."}
                     </h2>
                     <p className="section-subtext">
-                        {'보기 좋은 웹사이트는 만들지 않습니다.\n바이어가 들어오고, 문의가 자동으로 접수되고,\n대표님 폰에 3초 안에 알림이 오는 시스템을 구축합니다.'}
+                        {'인지, 판단, 제어까지 이어지는 파이프라인 전체를 최적화하여\n상황을 정확하게 이해하고 가장 안전한 경로를 실시간으로 제시합니다.'}
                     </p>
                 </motion.div>
 

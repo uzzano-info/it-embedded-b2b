@@ -3,10 +3,10 @@ import useInView from '../../hooks/useInView'
 import styles from './Features.module.css'
 
 const flowSteps = [
-    { icon: '📝', label: '바이어 문의 접수' },
-    { icon: '⚙️', label: 'n8n 자동 라우팅' },
-    { icon: '📱', label: '즉시 알림 전송' },
-    { icon: '📊', label: 'CRM 자동 기록' },
+    { icon: '📷', label: '데이터 획득' },
+    { icon: '⚙️', label: '딥러닝 객체 추적' },
+    { icon: '🔄', label: '실시간 센서 퓨전' },
+    { icon: '🗺️', label: '4D Spatial 환경 구성' },
 ]
 
 export default function AutomationTab({ inView: parentInView }) {
@@ -41,7 +41,7 @@ export default function AutomationTab({ inView: parentInView }) {
     return (
         <div ref={tabRef}>
             <p className={styles.tabHeadline}>
-                {'RFQ가 들어왔는데 다음 날 확인하셨습니까?\n그 바이어는 이미 경쟁사에 발주했습니다.'}
+                {'복잡한 도심 교차로와 폭우 속에서도\n가장 정확한 360° 3D 맵핑 인지 능력.'}
             </p>
 
             {/* Flow diagram */}
@@ -61,16 +61,16 @@ export default function AutomationTab({ inView: parentInView }) {
                 </div>
                 <div className={styles.flowExtra}>
                     <div className={styles.flowExtraNode}>
-                        📧 자동 회신 발송
+                        💡 판단 제어 인계
                     </div>
                 </div>
             </div>
 
             {/* Demo panel */}
             <div className={styles.demoPanel}>
-                <h3 className={styles.demoTitle}>직접 테스트해보세요.</h3>
+                <h3 className={styles.demoTitle}>기술 도입 세미나 및 데모 신청</h3>
                 <p className={styles.demoSub}>
-                    아래 폼에 입력하면, 실제와 동일한 카카오톡 알림이 어떻게 오는지 확인할 수 있습니다.
+                    아래 폼에 입력하시면, 센서 퓨전 모듈 데모 세미나 일정을 안내해 드립니다.
                 </p>
 
                 <form onSubmit={handleSubmit}>
@@ -84,22 +84,21 @@ export default function AutomationTab({ inView: parentInView }) {
                         />
                         <input
                             className={styles.demoInput}
-                            placeholder="회사명"
+                            placeholder="소속 기업 (OEM/Tier-1)"
                             value={form.company}
                             onChange={(e) => setForm({ ...form, company: e.target.value })}
                             disabled={used}
                         />
                         <input
                             className={styles.demoInput}
-                            placeholder="이메일"
-                            type="email"
+                            placeholder="관심 ADAS 레벨"
                             value={form.email}
                             onChange={(e) => setForm({ ...form, email: e.target.value })}
                             disabled={used}
                         />
                     </div>
                     <button className={styles.demoBtn} type="submit" disabled={loading || used}>
-                        {loading ? '⏳ 전송 중...' : used ? '데모는 세션당 1회만 가능합니다.' : '🔔 알림 테스트 발송'}
+                        {loading ? '⏳ 전송 중...' : used ? '신청이 완료되었습니다.' : '🔔 데모 신청 및 일정 조율'}
                     </button>
                 </form>
 
@@ -109,9 +108,9 @@ export default function AutomationTab({ inView: parentInView }) {
                             📱 KakaoTalk
                         </div>
                         <div className={styles.notifBody}>
-                            <strong>[새 문의 접수]</strong><br />
+                            <strong>[세미나 & 데모 신청 접수]</strong><br />
                             {form.name} / {form.company}<br />
-                            '견적 요청 - MCU 보드...'
+                            'ADAS 데모 및 센서 퓨전 모듈 도입 논의...'
                         </div>
                         <div className={styles.notifTime}>방금 전</div>
                     </div>
@@ -119,8 +118,8 @@ export default function AutomationTab({ inView: parentInView }) {
 
                 <p className={styles.demoNote}>
                     {submitted
-                        ? '실제 서비스에서는 이 알림이 대표님과 영업팀 전원에게 동시 전송됩니다.'
-                        : '이 데모는 API를 호출하지 않습니다. 순수 프론트엔드 시뮬레이션입니다.'}
+                        ? '담당 엔지니어가 신속히 확인 후 피드백을 드립니다.'
+                        : '제출된 정보는 시연 용도로만 활용되며 저장되지 않습니다.'}
                 </p>
             </div>
         </div>
