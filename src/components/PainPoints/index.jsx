@@ -4,19 +4,19 @@ import useCountUp from '../../hooks/useCountUp'
 import styles from './PainPoints.module.css'
 
 const beforeStats = [
-    { label: '인지 성능', desc: '야간/악천후', value: '저하', status: 'danger' },
-    { label: '데이터 처리', desc: '지연 시간', value: '100ms 이상', status: 'danger', numeric: 100, suffix: 'ms 이상' },
-    { label: '안전 규격', desc: 'ISO 26262', value: '개발 지연', status: 'danger' },
-    { label: '상용화', desc: '자체 개발 시', value: '평균 3년', status: 'danger', numeric: 3, suffix: '년' },
-    { label: '차량 통합', desc: '제어 시스템', value: '호환성 부족', status: 'danger' },
+    { label: 'Perception', desc: 'Night / Adverse Weather', value: 'Degraded', status: 'danger' },
+    { label: 'Latency', desc: 'Inference Pipeline', value: '>100ms', status: 'danger', numeric: 100, suffix: 'ms+' },
+    { label: 'Safety Cert', desc: 'ISO 26262', value: 'Delayed', status: 'danger' },
+    { label: 'Time-to-Market', desc: 'In-house Dev', value: '3+ yrs', status: 'danger', numeric: 3, suffix: ' yrs' },
+    { label: 'Integration', desc: 'Vehicle Bus', value: 'Fragmented', status: 'danger' },
 ]
 
 const afterStats = [
-    { label: '인지 성능', desc: '야간/악천후', value: '정밀 탐지', status: 'success' },
-    { label: '데이터 처리', desc: '지연 시간', value: '< 10ms', status: 'success', numeric: 10, prefix: '< ', suffix: 'ms' },
-    { label: '안전 규격', desc: 'ISO 26262', value: 'ASIL-D 레디', status: 'success' },
-    { label: '상용화', desc: '솔루션 도입 시', value: '6개월 이내', status: 'success', numeric: 6, suffix: '개월 이내' },
-    { label: '차량 통합', desc: '제어 시스템', value: 'CAN/Ethernet', status: 'success' },
+    { label: 'Perception', desc: 'Night / Adverse Weather', value: 'Zero Blind-spot', status: 'success' },
+    { label: 'Latency', desc: 'Inference Pipeline', value: '< 10ms', status: 'success', numeric: 10, prefix: '< ', suffix: 'ms' },
+    { label: 'Safety Cert', desc: 'ISO 26262', value: 'ASIL-D Ready', status: 'success' },
+    { label: 'Time-to-Market', desc: 'w/ Our Stack', value: '< 6 mo', status: 'success', numeric: 6, suffix: ' mo' },
+    { label: 'Integration', desc: 'Vehicle Bus', value: 'CAN-FD / Eth', status: 'success' },
 ]
 
 function StatRow({ stat, inView, side }) {
@@ -74,12 +74,12 @@ export default function PainPoints() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="section-label">ADAS 개발의 병목 현상</span>
+                    <span className="section-label">The ADAS Development Bottleneck</span>
                     <h2 className="section-headline">
-                        {'독자적인 ADAS 구축에는\n막대한 리소스와 시간이 소모됩니다.'}
+                        {'Building a reliable ADAS stack in-house\ndemands massive resources and expertise.'}
                     </h2>
                     <p className="section-subtext">
-                        {'카메라, 라이다, 레이더 등 방대한 멀티 센서 데이터를 지연 없이 처리하고,\n가장 높은 수준의 글로벌 안전 규격을 충족하는 것은\n많은 글로벌 OEM과 Tier-1들이 겪고 있는 과제입니다.'}
+                        {'Processing high-bandwidth data from cameras, LiDAR, and 4D radar with zero latency,\nwhile meeting the strictest global safety certifications—\nthis is the challenge every OEM and Tier-1 faces today.'}
                     </p>
                 </motion.div>
 
@@ -97,7 +97,7 @@ export default function PainPoints() {
                     >
                         <div className={styles.colHeader}>
                             <span className={styles.colIcon}>❌</span>
-                            <span className={styles.colTitle}>기존 개발 환경의 한계</span>
+                            <span className={styles.colTitle}>Legacy Approach Limitations</span>
                         </div>
                         <div className={styles.screenshot + ' ' + styles.screenshotBefore}>
                             <div className={styles.screenshotInner}>
@@ -107,13 +107,13 @@ export default function PainPoints() {
                                 <div className={styles.fakeBlock}></div>
                                 <div className={styles.fakeLine} style={{ width: '60%' }}></div>
                             </div>
-                            <span className={styles.screenshotLabel}>레거시 비전 시스템</span>
+                            <span className={styles.screenshotLabel}>Legacy Vision Pipeline</span>
                         </div>
                         {beforeStats.map((s, i) => (
                             <StatRow key={i} stat={s} inView={inView} side="before" />
                         ))}
                         <p className={styles.caption}>
-                            자체 구축 시 마주하는 상용화의 한계점입니다.
+                            Limitations your team faces when building from scratch.
                         </p>
                     </motion.div>
 
@@ -125,7 +125,7 @@ export default function PainPoints() {
                     >
                         <div className={styles.colHeader}>
                             <span className={styles.colIcon}>✅</span>
-                            <span className={styles.colTitle}>AUTO-ADAS 솔루션 도입 후</span>
+                            <span className={styles.colTitle}>With AUTO-ADAS Stack</span>
                         </div>
                         <div className={styles.screenshot + ' ' + styles.screenshotAfter}>
                             <div className={styles.screenshotInner}>
@@ -137,13 +137,13 @@ export default function PainPoints() {
                                     <div className={styles.fakeCard}></div>
                                 </div>
                             </div>
-                            <span className={styles.screenshotLabel}>통합 엣지 AI 퓨전</span>
+                            <span className={styles.screenshotLabel}>Integrated Edge AI Fusion</span>
                         </div>
                         {afterStats.map((s, i) => (
                             <StatRow key={i} stat={s} inView={inView} side="after" />
                         ))}
                         <p className={styles.caption}>
-                            검증된 솔루션 도입으로 확보 가능한 성과입니다.
+                            Achievable outcomes with our proven solution stack.
                         </p>
                     </motion.div>
                 </motion.div>

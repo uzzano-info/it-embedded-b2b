@@ -20,7 +20,7 @@ function formatProductResponse(product) {
         .map(([k, v]) => `· ${k.toUpperCase()}: ${v}`)
         .join('\n')
 
-    return `📋 **${product.name}**\n${product.description}\n\n${specLines}\n\n📄 데이터시트: ${product.datasheet}`
+    return `📋 **${product.name}**\n${product.description}\n\n${specLines}\n\n📄 Datasheet: ${product.datasheet}`
 }
 
 function generateResponse(query) {
@@ -33,15 +33,15 @@ function generateResponse(query) {
     if (faq) return faq.answer
 
     // Default fallback
-    return '해당 기술 문서에 대한 상세 정보를 찾을 수 없습니다.\n\n다음을 시도해 보세요:\n· 솔루션명으로 질문 (예: "AUTO-Edge V2 스펙")\n· 질문 키워드 (PoC, ASIL, 커스텀 하드웨어, 문서화)\n\n또는 양산 엔지니어에게 다이렉트로 문의하세요:\n📧 sales@auto-adas.com'
+    return 'I couldn\'t find specific documentation for that query.\n\nTry the following:\n· Ask by solution name (e.g. "AUTO-Edge V2 specs")\n· Use keywords (PoC, ASIL, AUTOSAR, Euro NCAP, ODD)\n\nOr reach out directly to our engineering team:\n📧 sales@auto-adas.com'
 }
 
 const INITIAL_MESSAGES = [
     {
         id: 'welcome',
         role: 'bot',
-        text: '안녕하세요! 👋\nAUTO-ADAS 엔지니어 전용 기술 봇입니다.\n\nEdge AI 보드의 스펙, PoC 과정, 기능안전 인증(ASIL) 문서 등을 즉각적으로 열람해 보세요.\n예: "오린 NX 엣지보드 스펙"',
-        time: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
+        text: 'Hello! 👋\nI\'m your ADAS Engineering Assistant.\n\nAsk me about edge AI board specs, Euro NCAP 2026 alignment, ASIL-D certification, or Transformer-based perception.\nExample: "NVIDIA Orin NX edge board specs"',
+        time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
     },
 ]
 
@@ -55,7 +55,7 @@ export default function useChatbot() {
             id: `user-${idRef.current++}`,
             role: 'user',
             text,
-            time: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
+            time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
         }
 
         setMessages((prev) => [...prev, userMsg])
@@ -69,7 +69,7 @@ export default function useChatbot() {
                 id: `bot-${idRef.current++}`,
                 role: 'bot',
                 text: response,
-                time: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
+                time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
             }
             setMessages((prev) => [...prev, botMsg])
             setIsTyping(false)

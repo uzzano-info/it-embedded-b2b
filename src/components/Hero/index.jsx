@@ -12,10 +12,10 @@ const fadeUp = {
 }
 
 const trustBadges = [
-    { icon: '🏆', label: 'ISO 26262 ASIL-D' },
-    { icon: '⚡', label: '초저지연 < 10ms' },
-    { icon: '🔔', label: '다중 센서 퓨전 지원' },
-    { icon: '⚛️', label: '엣지 AI 최적화' },
+    { icon: '🏆', label: 'ISO 26262 ASIL-D Ready' },
+    { icon: '⚡', label: 'Euro NCAP 2026 Aligned' },
+    { icon: '🔄', label: 'AI-Native Sensor Fusion' },
+    { icon: '⚛️', label: 'Transformer-based Perception' },
 ]
 
 export default function Hero() {
@@ -150,34 +150,35 @@ export default function Hero() {
                     className={`badge ${styles.badge}`}
                     variants={fadeUp} initial="hidden" animate="visible" custom={0}
                 >
-                    차세대 모빌리티 ADAS 핵심 기술
+                    Software-Defined ADAS · Feb 2026
                 </motion.span>
 
                 <motion.h1
                     className={styles.headline}
                     variants={fadeUp} initial="hidden" animate="visible" custom={1}
                 >
-                    차세대 모빌리티를 위한{'\n'}
-                    초정밀 자율주행 ADAS 솔루션
+                    Next-Gen Software-Defined ADAS:{'\n'}
+                    Precision Perception & Real-time Edge Intelligence
                 </motion.h1>
 
                 <motion.p
                     className={styles.subheadline}
                     variants={fadeUp} initial="hidden" animate="visible" custom={2}
                 >
-                    멀티 센서 퓨전과 실시간 엣지 AI를 결합하여{'\n'}
-                    가장 안전하고 직관적인 인지, 판단, 제어 시스템을 제공합니다.
+                    We provide high-performance, automotive-grade ADAS solutions{'\n'}
+                    featuring multi-sensor fusion and deep-learning-based path prediction{'\n'}
+                    for safer, more reliable mobility.
                 </motion.p>
 
                 <motion.div
                     className={styles.buttons}
                     variants={fadeUp} initial="hidden" animate="visible" custom={3}
                 >
-                    <a href="#contact" className="accent-btn" onClick={(e) => scrollTo(e, '#contact')}>
-                        PoC 프로젝트 신청하기
+                    <a href="#demo" className="accent-btn" onClick={(e) => scrollTo(e, '#demo')}>
+                        View Tech Specs & API Docs
                     </a>
-                    <a href="#demo" className="ghost-btn" onClick={(e) => scrollTo(e, '#demo')}>
-                        기술 사양서 다운로드 →
+                    <a href="#contact" className="ghost-btn" onClick={(e) => scrollTo(e, '#contact')}>
+                        Download Architecture Whitepaper →
                     </a>
                 </motion.div>
 

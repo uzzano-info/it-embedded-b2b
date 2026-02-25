@@ -2,11 +2,11 @@ import { useState } from 'react'
 import styles from './ComponentDemo.module.css'
 
 const nodes = [
-    { id: 'sensor', icon: '📡', label: 'Sensor Array', x: 60, y: 100, specs: 'LiDAR, 4D Radar, Camera\nGMSL2 / FPD-Link III\nTime-synchronized Data' },
-    { id: 'gateway', icon: '⚙️', label: 'Sensor Fusion', x: 260, y: 100, specs: 'NVIDIA Orin / Snapdragon\n실시간 3D Point-cloud\n딥러닝 멀티 객체 추적 (MOT)' },
-    { id: 'cloud', icon: '🧠', label: 'Path Planning', x: 460, y: 100, specs: 'AI 기반 의도 예측\n충돌 회피(AEB) 경로 생성\n< 10ms 초저지연 연산' },
-    { id: 'dashboard', icon: '🚙', label: 'Vehicle Control', x: 660, y: 100, specs: '조향/가감속 제어 (MCU)\nCAN-FD 안전 통신\nAUTOSAR Classic OS' },
-    { id: 'mobile', icon: '📱', label: 'Digital Cockpit', x: 860, y: 100, specs: '운전자 HMI 디스플레이\nAR HUD 연동 데이터\n상황별 시/청각 통합 경고' },
+    { id: 'sensor', icon: '📡', label: 'Raw Data Acquisition', x: 60, y: 100, specs: '4D Imaging Radar\nSolid-state LiDAR\n8MP Camera Array' },
+    { id: 'gateway', icon: '⚙️', label: 'Sensor Fusion Engine', x: 260, y: 100, specs: 'Feature-level Fusion\nTime-synchronized Pipeline\nRedundant Data Paths' },
+    { id: 'cloud', icon: '🧠', label: 'DL Perception', x: 460, y: 100, specs: 'Transformer-based Detection\nScene Understanding (VLM)\nLong-range Object Tracking' },
+    { id: 'dashboard', icon: '📍', label: 'Path Planning', x: 660, y: 100, specs: 'Kinematic Control Logic\nRedundant Path Planner\nFail-operational Fallback' },
+    { id: 'mobile', icon: '🚗', label: 'Vehicle Actuation', x: 860, y: 100, specs: 'CAN-FD / Automotive Ethernet\nACU Steering & Braking\nAUTOSAR Integration' },
 ]
 
 const connections = [
@@ -24,11 +24,11 @@ export default function ArchitectureDiagram() {
     return (
         <div>
             <p className={styles.caption}>
-                {'실시간 센서 퓨전부터 차량 제어까지의 파이프라인 아키텍처입니다.\n노드에 마우스를 올리면 세부 기술 스택이 표시됩니다.'}
+                {'End-to-end ADAS pipeline from raw data acquisition to vehicle actuation.\nHover over each node to explore the underlying technology stack.'}
             </p>
 
             <div className={styles.archContainer}>
-                <svg viewBox="0 0 960 200" className={styles.archSvg} aria-label="ADAS 시스템 퓨전 아키텍처 다이어그램">
+                <svg viewBox="0 0 960 200" className={styles.archSvg} aria-label="ADAS System Pipeline Architecture Diagram">
                     {/* Connection lines */}
                     {connections.map((c, i) => {
                         const from = getNode(c.from)

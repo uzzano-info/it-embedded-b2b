@@ -3,10 +3,10 @@ import useInView from '../../hooks/useInView'
 import styles from './Features.module.css'
 
 const flowSteps = [
-    { icon: '📷', label: '데이터 획득' },
-    { icon: '⚙️', label: '딥러닝 객체 추적' },
-    { icon: '🔄', label: '실시간 센서 퓨전' },
-    { icon: '🗺️', label: '4D Spatial 환경 구성' },
+    { icon: '📷', label: '4D Radar + LiDAR + Camera' },
+    { icon: '⚙️', label: 'Feature-level Fusion' },
+    { icon: '🔄', label: 'Scene Understanding (DL)' },
+    { icon: '🗺️', label: '3D Occupancy Grid' },
 ]
 
 export default function AutomationTab({ inView: parentInView }) {
@@ -41,7 +41,7 @@ export default function AutomationTab({ inView: parentInView }) {
     return (
         <div ref={tabRef}>
             <p className={styles.tabHeadline}>
-                {'복잡한 도심 교차로와 폭우 속에서도\n가장 정확한 360° 3D 맵핑 인지 능력.'}
+                {'Integrating 4D Imaging Radar, Solid-state LiDAR, and Vision sensors\nat the feature level for zero-blind-spot perception in extreme weather.'}
             </p>
 
             {/* Flow diagram */}
@@ -61,65 +61,65 @@ export default function AutomationTab({ inView: parentInView }) {
                 </div>
                 <div className={styles.flowExtra}>
                     <div className={styles.flowExtraNode}>
-                        💡 판단 제어 인계
+                        💡 Handoff to Path Planning
                     </div>
                 </div>
             </div>
 
             {/* Demo panel */}
             <div className={styles.demoPanel}>
-                <h3 className={styles.demoTitle}>기술 도입 세미나 및 데모 신청</h3>
+                <h3 className={styles.demoTitle}>Request a Sensor Fusion Demo & Seminar</h3>
                 <p className={styles.demoSub}>
-                    아래 폼에 입력하시면, 센서 퓨전 모듈 데모 세미나 일정을 안내해 드립니다.
+                    Submit the form below and we'll arrange a live sensor fusion module demo and technical seminar.
                 </p>
 
                 <form onSubmit={handleSubmit}>
                     <div className={styles.demoForm}>
                         <input
                             className={styles.demoInput}
-                            placeholder="이름"
+                            placeholder="Name"
                             value={form.name}
                             onChange={(e) => setForm({ ...form, name: e.target.value })}
                             disabled={used}
                         />
                         <input
                             className={styles.demoInput}
-                            placeholder="소속 기업 (OEM/Tier-1)"
+                            placeholder="Company (OEM / Tier-1)"
                             value={form.company}
                             onChange={(e) => setForm({ ...form, company: e.target.value })}
                             disabled={used}
                         />
                         <input
                             className={styles.demoInput}
-                            placeholder="관심 ADAS 레벨"
+                            placeholder="Target ADAS Level"
                             value={form.email}
                             onChange={(e) => setForm({ ...form, email: e.target.value })}
                             disabled={used}
                         />
                     </div>
                     <button className={styles.demoBtn} type="submit" disabled={loading || used}>
-                        {loading ? '⏳ 전송 중...' : used ? '신청이 완료되었습니다.' : '🔔 데모 신청 및 일정 조율'}
+                        {loading ? '⏳ Submitting...' : used ? 'Request submitted successfully.' : '🔔 Request Demo & Schedule'}
                     </button>
                 </form>
 
                 {submitted && (
                     <div className={styles.notification}>
                         <div className={styles.notifHeader}>
-                            📱 KakaoTalk
+                            📩 Notification
                         </div>
                         <div className={styles.notifBody}>
-                            <strong>[세미나 & 데모 신청 접수]</strong><br />
+                            <strong>[Demo & Seminar Request Received]</strong><br />
                             {form.name} / {form.company}<br />
-                            'ADAS 데모 및 센서 퓨전 모듈 도입 논의...'
+                            'ADAS demo and sensor fusion module integration discussion...'
                         </div>
-                        <div className={styles.notifTime}>방금 전</div>
+                        <div className={styles.notifTime}>Just now</div>
                     </div>
                 )}
 
                 <p className={styles.demoNote}>
                     {submitted
-                        ? '담당 엔지니어가 신속히 확인 후 피드백을 드립니다.'
-                        : '제출된 정보는 시연 용도로만 활용되며 저장되지 않습니다.'}
+                        ? 'An assigned engineer will review and respond promptly.'
+                        : 'Submitted data is used for demo purposes only and is not stored.'}
                 </p>
             </div>
         </div>

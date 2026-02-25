@@ -2,49 +2,49 @@ import styles from './Features.module.css'
 
 const features = [
     {
-        title: '초정밀 센서 기술 사양 즉시 응답',
-        desc: 'FOV, Point cloud 해상도, 연산 성능 등 엔지니어의 디테일한 기술 질문에 답변합니다.',
+        title: 'ASIL-D Functional Safety Architecture',
+        desc: 'Redundant path planning and fail-operational control logic meeting ISO 26262 ASIL-D standards.',
     },
     {
-        title: '1-클릭 데이터시트 제공',
-        desc: "'초저지연 AI 보드 데이터시트 줘' → 최신 PDF 링크 바로 제공.",
+        title: 'ODD Expansion for Urban Environments',
+        desc: 'Complex intersection navigation and unprotected left-turn logic based on vision-language models (VLM).',
     },
     {
-        title: '프로토콜 및 아키텍처 가이드',
-        desc: 'CAN-FD 연동 방법, 센서 마운팅 위치 권장 가이드 등 기술 레퍼런스 제시.',
+        title: 'Full AUTOSAR Compatibility',
+        desc: 'Fully compliant with both Adaptive and Classic AUTOSAR architectures for seamless OEM integration.',
     },
     {
-        title: 'PoC 및 커스텀 로직 담당자 연결',
-        desc: '특수 로직 통합이나 양산형 모델 가격 문의는 담당 영업/엔지니어에게 라우팅.',
+        title: 'Euro NCAP 2026 Aligned',
+        desc: 'Technical specifications designed to meet the latest Euro NCAP 2026 safety assessment requirements.',
     },
 ]
 
 const preloadedMessages = [
-    { role: 'user', content: 'ISO 26262 ASIL-D 인증을 위한 문서화 지원이 되나요?' },
+    { role: 'user', content: 'Is the software stack compatible with AUTOSAR?' },
     {
         role: 'bot',
-        content: '네, 제공되는 풀 ADAS 통합 보드는 ISO 26262 ASIL-D 규격을 만족하며, 인증 대응을 위한 필수 산출물을 함께 제공합니다.',
+        content: 'Yes, our stack is fully compliant with both Adaptive and Classic AUTOSAR architectures, ensuring seamless integration with existing OEM software platforms.',
         specs: [
-            'ASIL-D 지원 락스텝 코어',
-            'ISO/SAE 21434 사이버 보안 대응',
-            'AUTOSAR Classic/Adaptive 지원',
+            'Adaptive AUTOSAR (ara::com, ara::exec)',
+            'Classic AUTOSAR (BSW, RTE, MCAL)',
+            'ISO/SAE 21434 Cybersecurity Ready',
         ],
-        download: '📎 기능 안전 가이드북 (PDF, 5.1MB)',
+        download: '📎 AUTOSAR Integration Guide (PDF, 4.2MB)',
     },
 ]
 
 const suggestedPrompts = [
-    '통합 보드 발열량은?',
-    '기존 레이더와 호환되나요?',
-    '데이터시트 다운로드',
-    'PoC 진행 절차 안내',
+    'ODD expansion for urban?',
+    'Euro NCAP 2026 compliance?',
+    'ASIL-D documentation',
+    'Transformer-based perception',
 ]
 
 export default function AIChatbotTab() {
     return (
         <div>
             <p className={styles.tabHeadline}>
-                {'글로벌 OEM 엔지니어의 스펙 문의부터\nASIL 인증 여부까지, AI가 즉시 답변합니다.'}
+                {'Safety-critical software architecture meeting ISO 26262 ASIL-D,\nwith redundant path planning and fail-operational control logic.'}
             </p>
 
             <div className={styles.twoCol}>
@@ -63,7 +63,7 @@ export default function AIChatbotTab() {
 
                 {/* Right — Chatbot widget */}
                 <div className={styles.chatWidget}>
-                    <div className={styles.chatHeader}>🤖 AI 기술 상담</div>
+                    <div className={styles.chatHeader}>🤖 ADAS Engineering Assistant</div>
                     <div className={styles.chatMessages}>
                         {preloadedMessages.map((msg, i) => (
                             <div key={i} className={`${styles.chatMsg} ${styles[msg.role]}`}>
@@ -84,7 +84,7 @@ export default function AIChatbotTab() {
                     <div className={styles.chatInputArea}>
                         <input
                             className={styles.chatInput}
-                            placeholder="질문을 입력하세요..."
+                            placeholder="Ask a technical question..."
                             readOnly
                         />
                     </div>

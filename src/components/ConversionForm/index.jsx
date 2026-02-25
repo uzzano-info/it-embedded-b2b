@@ -98,10 +98,10 @@ export default function ConversionForm() {
                         >
                             ✅
                         </motion.span>
-                        <h3 className={styles.successTitle}>접수 완료!</h3>
+                        <h3 className={styles.successTitle}>Request Received!</h3>
                         <p className={styles.successText}>
-                            대표님의 카카오톡으로 접수 확인 알림이 전송되었습니다.{'\n'}
-                            24시간 내에 전담 엔지니어가 기술 검토 후 회신드리겠습니다.
+                            A confirmation has been sent to your inbox.{'\n'}
+                            A dedicated engineer will review and respond within 24 hours.
                         </p>
                         <span className={`${styles.successId} mono`}>#{inquiryId}</span>
                         {result.demo && <p className={styles.demoNote}>* 데모 모드 — Vercel 배포 시 실제 API가 연동됩니다.</p>}
@@ -119,12 +119,12 @@ export default function ConversionForm() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="section-label">기술 상담 및 PoC 문의</span>
+                    <span className="section-label">Technical Inquiry & PoC Request</span>
                     <h2 className="section-headline">
-                        ADAS 솔루션 통합 및 양산 관련 기술 문의를 남겨주세요.
+                        Submit your ADAS integration and production inquiry.
                     </h2>
                     <p className="section-subtext">
-                        {'아래 정보를 입력하시면 24시간 내에\n전담 엔지니어가 기술 사양서 및 데모 일정을 안내해 드립니다.\n간단한 폼으로 바로 시작하세요.'}
+                        {'Fill in the form below and a dedicated engineer will\nprovide technical specifications and demo scheduling within 24 hours.'}
                     </p>
                 </motion.div>
 
@@ -135,22 +135,22 @@ export default function ConversionForm() {
                             <div className={styles.trustItem}>
                                 <span className={styles.trustIcon}>✅</span>
                                 <div>
-                                    <strong>엔지니어 직접 대응</strong>
-                                    <p>기술 전문가가 초기부터 배정됩니다.</p>
+                                    <strong>Direct Engineer Support</strong>
+                                    <p>A technical expert is assigned from the start.</p>
                                 </div>
                             </div>
                             <div className={styles.trustItem}>
                                 <span className={styles.trustIcon}>✅</span>
                                 <div>
-                                    <strong>안전한 PoC 검증</strong>
-                                    <p>상호 신뢰를 위해 NDA를 기반으로 합니다.</p>
+                                    <strong>Secure PoC Validation</strong>
+                                    <p>Built on mutual trust with NDA-backed engagement.</p>
                                 </div>
                             </div>
                             <div className={styles.trustItem}>
                                 <span className={styles.trustIcon}>✅</span>
                                 <div>
-                                    <strong>모듈형 솔루션</strong>
-                                    <p>S/W 단독 탑재도 완벽하게 지원합니다.</p>
+                                    <strong>Modular Solution Stack</strong>
+                                    <p>Software-only deployment fully supported.</p>
                                 </div>
                             </div>
                         </div>
@@ -158,20 +158,20 @@ export default function ConversionForm() {
                         <div className={styles.trustDivider} />
 
                         <div className={styles.trustBlock}>
-                            <h4 className={styles.trustTitle}>접수 후 절차</h4>
+                            <h4 className={styles.trustTitle}>After Submission</h4>
                             <ol className={styles.trustSteps}>
-                                <li><span className={styles.stepNum}>1</span> 문의 접수 즉시 알림 발송</li>
-                                <li><span className={styles.stepNum}>2</span> 24시간 내 기술 담당자 배정 및 데모 안내</li>
-                                <li><span className={styles.stepNum}>3</span> NDA 체결 및 맞춤형 솔루션 검토</li>
+                                <li><span className={styles.stepNum}>1</span> Instant inquiry confirmation notification</li>
+                                <li><span className={styles.stepNum}>2</span> Engineer assigned & demo scheduled within 24h</li>
+                                <li><span className={styles.stepNum}>3</span> NDA execution & tailored solution review</li>
                             </ol>
                         </div>
 
                         <div className={styles.trustDivider} />
 
                         <div className={styles.trustBlock}>
-                            <p className={styles.trustCopy}>폼 대신 카카오톡으로 바로 문의하세요.</p>
+                            <p className={styles.trustCopy}>Prefer a direct channel? Reach out via KakaoTalk.</p>
                             <a href="#" className={styles.kakaoBtn}>
-                                💬 카카오톡 채널 바로가기 →
+                                💬 KakaoTalk Channel →
                             </a>
                         </div>
                     </aside>
@@ -196,49 +196,49 @@ export default function ConversionForm() {
                         <AnimatePresence mode="wait" custom={dir}>
                             {step === 1 && (
                                 <motion.div key="step1" custom={dir} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
-                                    <h3 className={styles.formStepTitle}>기본 정보 (1/3)</h3>
+                                    <h3 className={styles.formStepTitle}>Basic Info (1/3)</h3>
                                     <div className={styles.formGrid}>
                                         <div className={styles.field}>
-                                            <label className={styles.label}>회사명 <span className={styles.req}>*</span></label>
-                                            <input className={`${styles.input} ${errors.company ? styles.inputError : ''}`} value={form.company} onChange={(e) => set('company', e.target.value)} placeholder="예) OO전자" />
+                                            <label className={styles.label}>Company <span className={styles.req}>*</span></label>
+                                            <input className={`${styles.input} ${errors.company ? styles.inputError : ''}`} value={form.company} onChange={(e) => set('company', e.target.value)} placeholder="e.g. Samsung SDI" />
                                             {errors.company && <span className={styles.error}>{errors.company}</span>}
                                         </div>
                                         <div className={styles.field}>
-                                            <label className={styles.label}>담당자명 <span className={styles.req}>*</span></label>
-                                            <input className={`${styles.input} ${errors.name ? styles.inputError : ''}`} value={form.name} onChange={(e) => set('name', e.target.value)} placeholder="예) 홍길동" />
+                                            <label className={styles.label}>Contact Name <span className={styles.req}>*</span></label>
+                                            <input className={`${styles.input} ${errors.name ? styles.inputError : ''}`} value={form.name} onChange={(e) => set('name', e.target.value)} placeholder="e.g. John Kim" />
                                             {errors.name && <span className={styles.error}>{errors.name}</span>}
                                         </div>
                                         <div className={styles.field}>
-                                            <label className={styles.label}>이메일 <span className={styles.req}>*</span></label>
+                                            <label className={styles.label}>Email <span className={styles.req}>*</span></label>
                                             <input className={`${styles.input} ${errors.email ? styles.inputError : ''}`} type="email" value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="example@company.com" />
                                             {errors.email && <span className={styles.error}>{errors.email}</span>}
                                         </div>
                                         <div className={styles.field}>
-                                            <label className={styles.label}>연락처</label>
+                                            <label className={styles.label}>Phone</label>
                                             <input className={styles.input} type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} placeholder="010-0000-0000" />
                                         </div>
                                     </div>
                                     <div className={styles.formActions}>
                                         <div />
-                                        <button className="accent-btn" onClick={next}>다음 단계 →</button>
+                                        <button className="accent-btn" onClick={next}>Next Step →</button>
                                     </div>
                                 </motion.div>
                             )}
 
                             {step === 2 && (
                                 <motion.div key="step2" custom={dir} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
-                                    <h3 className={styles.formStepTitle}>프로젝트 정보 (2/3)</h3>
+                                    <h3 className={styles.formStepTitle}>Project Details (2/3)</h3>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>차량/보드 플랫폼 (선택)</label>
-                                        <input className={styles.input} value={form.websiteUrl} onChange={(e) => set('websiteUrl', e.target.value)} placeholder="예) Linux, QNX, Orin Nano 탑재 차량" />
+                                        <label className={styles.label}>Vehicle / Board Platform (Optional)</label>
+                                        <input className={styles.input} value={form.websiteUrl} onChange={(e) => set('websiteUrl', e.target.value)} placeholder="e.g. Linux, QNX, Orin Nano-based vehicle" />
                                     </div>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>관심 솔루션 <span className={styles.req}>*</span></label>
+                                        <label className={styles.label}>Solution of Interest <span className={styles.req}>*</span></label>
                                         <div className={styles.radioGroup}>
                                             {[
-                                                ['sensorFusion', '센서 퓨전 모듈 (Sensor Fusion Module)'],
-                                                ['edgeAi', '초저지연 엣지 AI 보드 (Edge AI Board)'],
-                                                ['fullAdas', '풀 ADAS 시스템 (Full ADAS System)'],
+                                                ['sensorFusion', 'Perception Stack (Multi-Sensor Fusion)'],
+                                                ['edgeAi', 'Edge AI Inference Board'],
+                                                ['fullAdas', 'Full ADAS System (End-to-End)'],
                                             ].map(([val, label]) => (
                                                 <label key={val} className={`${styles.radio} ${form.inquiryType === val ? styles.radioActive : ''}`}>
                                                     <input type="radio" name="inquiryType" value={val} checked={form.inquiryType === val} onChange={(e) => set('inquiryType', e.target.value)} />
@@ -249,13 +249,13 @@ export default function ConversionForm() {
                                         {errors.inquiryType && <span className={styles.error}>{errors.inquiryType}</span>}
                                     </div>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>목표 양산 시점</label>
+                                        <label className={styles.label}>Target Production Timeline</label>
                                         <div className={styles.radioGroup}>
                                             {[
-                                                ['6mo', '6개월 이내'],
-                                                ['1yr', '1년 이내'],
-                                                ['2yr', '1~2년 이내'],
-                                                ['undecided', '미정 (선행 연구 단계)'],
+                                                ['6mo', 'Within 6 months'],
+                                                ['1yr', 'Within 1 year'],
+                                                ['2yr', '1–2 years'],
+                                                ['undecided', 'TBD (Pre-research)'],
                                             ].map(([val, label]) => (
                                                 <label key={val} className={`${styles.radio} ${form.budget === val ? styles.radioActive : ''}`}>
                                                     <input type="radio" name="budget" value={val} checked={form.budget === val} onChange={(e) => set('budget', e.target.value)} />
@@ -265,27 +265,27 @@ export default function ConversionForm() {
                                         </div>
                                     </div>
                                     <div className={styles.formActions}>
-                                        <button className="ghost-btn" onClick={prev}>← 이전</button>
-                                        <button className="accent-btn" onClick={next}>다음 단계 →</button>
+                                        <button className="ghost-btn" onClick={prev}>← Back</button>
+                                        <button className="accent-btn" onClick={next}>Next Step →</button>
                                     </div>
                                 </motion.div>
                             )}
 
                             {step === 3 && (
                                 <motion.div key="step3" custom={dir} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }}>
-                                    <h3 className={styles.formStepTitle}>추가 정보 & 제출 (3/3)</h3>
+                                    <h3 className={styles.formStepTitle}>Additional Info & Submit (3/3)</h3>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>추가 요청사항</label>
-                                        <textarea className={styles.textarea} rows={3} value={form.message} onChange={(e) => set('message', e.target.value)} placeholder="추가로 전달하고 싶은 내용이 있으시면 입력해 주세요." />
+                                        <label className={styles.label}>Additional Notes</label>
+                                        <textarea className={styles.textarea} rows={3} value={form.message} onChange={(e) => set('message', e.target.value)} placeholder="Any additional information or requirements you'd like to share." />
                                     </div>
                                     <div className={styles.field}>
-                                        <label className={styles.label}>파일 첨부</label>
+                                        <label className={styles.label}>File Attachment</label>
                                         <label className={styles.fileDrop}>
                                             <input type="file" accept=".pdf,.png,.jpg,.jpeg" className={styles.fileInput} onChange={(e) => set('file', e.target.files[0])} />
                                             {form.file ? (
                                                 <span className={styles.fileName}>📎 {form.file.name}</span>
                                             ) : (
-                                                <span className={styles.filePlaceholder}>📎 파일 선택 또는 드래그 앤 드롭 (PDF, 이미지)</span>
+                                                <span className={styles.filePlaceholder}>📎 Select file or drag & drop (PDF, Image)</span>
                                             )}
                                         </label>
                                     </div>
@@ -293,14 +293,14 @@ export default function ConversionForm() {
                                         <label className={`${styles.checkbox} ${errors.agree ? styles.checkboxError : ''}`}>
                                             <input type="checkbox" checked={agreed} onChange={(e) => { setAgreed(e.target.checked); if (errors.agree) setErrors((p) => ({ ...p, agree: null })) }} />
                                             <span className={styles.checkmark} />
-                                            개인정보 처리방침에 동의합니다.
+                                            I agree to the Privacy Policy.
                                         </label>
                                         {errors.agree && <span className={styles.error}>{errors.agree}</span>}
                                     </div>
                                     <div className={styles.formActions}>
-                                        <button className="ghost-btn" onClick={prev}>← 이전</button>
+                                        <button className="ghost-btn" onClick={prev}>← Back</button>
                                         <button className="accent-btn" onClick={handleSubmit} disabled={loading}>
-                                            {loading ? '⏳ 접수 중...' : '🚀 데모 브리핑 신청하기'}
+                                            {loading ? '⏳ Submitting...' : '🚀 Request Technical Briefing'}
                                         </button>
                                     </div>
                                 </motion.div>
@@ -308,7 +308,7 @@ export default function ConversionForm() {
                         </AnimatePresence>
                     </div>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     )
 }

@@ -27,12 +27,12 @@ export default function ComponentDemo() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="section-label">기술 데이터 시연</span>
+                    <span className="section-label">Technical Data Demo</span>
                     <h2 className="section-headline">
-                        {'AD/ADAS 솔루션 스펙 및 센서 퓨전 아키텍처.\nOEM 엔지니어가 요구하는 스펙을 증명합니다.'}
+                        {'AD/ADAS solution specs and sensor fusion architecture.\nProving the specifications OEM engineers demand.'}
                     </h2>
                     <p className="section-subtext">
-                        {"모호한 마케팅 용어 대신 '객관적인 TDD 스펙'을 제시합니다.\n글로벌 바이어가 사이트 접속 즉시 기술 검토를 시작할 수 있습니다."}
+                        {"Transparent TDD specs instead of vague marketing claims.\nGlobal buyers can begin technical review the moment they land on this page."}
                     </p>
                 </motion.div>
 

@@ -29,9 +29,9 @@ export default function Header() {
     }
 
     const links = [
-        { href: '#features', label: '핵심 기능' },
-        { href: '#process', label: '진행 방식' },
-        { href: '#demo', label: '데모' },
+        { href: '#features', label: 'Core Tech' },
+        { href: '#process', label: 'Process' },
+        { href: '#demo', label: 'Demo' },
     ]
 
     return (
@@ -55,7 +55,7 @@ export default function Header() {
                 </nav>
 
                 <a href="#contact" className={`accent-btn ${styles.cta}`} onClick={(e) => handleNavClick(e, '#contact')}>
-                    무료 진단 요청 →
+                    View Tech Specs →
                 </a>
 
                 <button
@@ -77,7 +77,7 @@ export default function Header() {
                         </a>
                     ))}
                     <a href="#contact" className="accent-btn" style={{ marginTop: '16px', width: '100%', textAlign: 'center' }} onClick={(e) => handleNavClick(e, '#contact')}>
-                        무료 진단 요청 →
+                        View Tech Specs →
                     </a>
                 </nav>
             </div>

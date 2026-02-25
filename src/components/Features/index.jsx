@@ -7,9 +7,9 @@ import AIChatbotTab from './AIChatbotTab'
 import styles from './Features.module.css'
 
 const tabs = [
-    { id: 'speed', label: '⚡ 초저지연 엣지 AI 컴퓨팅' },
-    { id: 'automation', label: '🔄 AI 기반 멀티 센서 퓨전' },
-    { id: 'chatbot', label: '🤖 글로벌 전장 규격 신뢰성' },
+    { id: 'speed', label: '⚡ Real-time Edge AI Inference' },
+    { id: 'automation', label: '🔄 AI-Native Multi-Sensor Fusion' },
+    { id: 'chatbot', label: '🧑‍💻 ASIL-D Compliant Safety Layer' },
 ]
 
 const tabContent = {
@@ -31,12 +31,12 @@ export default function Features() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="section-label">핵심 스택 및 아키텍처</span>
+                    <span className="section-label">Core Technology Stack</span>
                     <h2 className="section-headline">
-                        {"단순한 인지 알고리즘이 아닙니다.\n완전한 자율주행을 위한 두뇌입니다."}
+                        {"Not just perception algorithms.\nThe complete brain for autonomous driving."}
                     </h2>
                     <p className="section-subtext">
-                        {'인지, 판단, 제어까지 이어지는 파이프라인 전체를 최적화하여\n상황을 정확하게 이해하고 가장 안전한 경로를 실시간으로 제시합니다.'}
+                        {'Optimizing the entire pipeline—from perception to decision to control—\nto accurately understand every scenario and deliver\nthe safest path in real time.'}
                     </p>
                 </motion.div>
 

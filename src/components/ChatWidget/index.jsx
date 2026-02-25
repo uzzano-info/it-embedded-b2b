@@ -4,10 +4,10 @@ import useChatbot from '../../hooks/useChatbot'
 import styles from './ChatWidget.module.css'
 
 const SUGGESTED = [
-    'AUTO-Edge V2 스펙',
-    'PoC/데모 일정 안내',
-    'ASIL 인증 지원 문서',
-    '샘플 발주 MOQ',
+    'Euro NCAP 2026 specs',
+    'Transformer perception details',
+    'AUTOSAR compatibility',
+    'ODD expansion for urban',
 ]
 
 export default function ChatWidget() {

@@ -1,13 +1,8 @@
-/**
- * Knowledge base for the AI chatbot.
- * Maps keywords/patterns to structured responses.
- */
-
-const products = [
+export const products = [
     {
         id: 'auto-edge-v1',
         name: 'AUTO-Edge V1',
-        keywords: ['v1', 'nano', 'orin', 'edge'],
+        keywords: ['v1', 'nano', 'orin', 'edge', 'entry'],
         specs: {
             processor: 'NVIDIA Orin Nano',
             memory: '8GB LPDDR5',
@@ -16,94 +11,108 @@ const products = [
             power: '10W ~ 15W',
             os: 'Ubuntu 20.04 (JetPack 5.x)',
         },
-        description: '컴팩트 ADAS 엣지 AI 보드. 엔트리급 자율주행 라인업 최적화.',
+        description: 'Compact ADAS edge AI board. Optimized for entry-level autonomous driving lineups.',
         datasheet: 'AUTO-Edge_V1_Datasheet.pdf',
     },
     {
         id: 'auto-edge-v2',
         name: 'AUTO-Edge V2',
-        keywords: ['v2', 'nx', 'orin', 'edge', '오린'],
+        keywords: ['v2', 'nx', 'orin', 'edge', 'high-perf'],
         specs: {
-            processor: 'NVIDIA Orin NX',
+            processor: 'NVIDIA Orin NX (100 TOPS)',
             memory: '16GB LPDDR5',
-            temp: '-40 ~ 85°C',
-            interface: 'CAN-FD, GMSL2 x 4',
-            power: '15W ~ 25W',
-            os: 'Ubuntu 20.04 (JetPack 5.x)',
+            temp: '-40 ~ 105°C',
+            interface: 'CAN-FD, GMSL2 x 4, 10GbE',
+            power: '25W ~ 35W',
+            os: 'Ubuntu 22.04 (JetPack 6.x)',
         },
-        description: '고성능 자율주행 엣지 AI 보드. 다중 카메라 스트리밍 지원.',
+        description: 'High-performance edge AI board for L2+ ~ L3 autonomous driving and multi-camera perception.',
         datasheet: 'AUTO-Edge_V2_Datasheet.pdf',
     },
     {
         id: 'auto-fusion-f1',
         name: 'AUTO-Fusion F1',
-        keywords: ['f1', 'fusion', 'snapdragon', 'ride', '퓨전'],
+        keywords: ['fusion', 'f1', 'ride', 'qualcomm', 'snapdragon', 'perception'],
         specs: {
-            processor: 'Qualcomm Snapdragon Ride',
-            memory: '32GB LPDDR5',
+            processor: 'Qualcomm Snapdragon Ride (SA8295P)',
+            memory: '16GB LPDDR5',
             temp: '-40 ~ 105°C',
-            interface: 'CAN-FD x 4, Automotive Ethernet',
-            power: '30W ~ 50W',
-            safety: 'ASIL-D Ready',
+            interface: 'CAN-FD, GMSL2 x 8, PCIe 4.0',
+            power: '25W ~ 40W',
+            computation: '30+ TOPS AI, 1 GFLOPS GPU',
         },
-        description: 'L3 이상 자율주행을 위한 멀티 센서 퓨전 통합 제어기.',
+        description: 'Transformer-based multi-sensor fusion platform. Supports 4D Imaging Radar, Solid-state LiDAR, and 8MP camera arrays for zero-blind-spot perception.',
         datasheet: 'AUTO-Fusion_F1_Datasheet.pdf',
     },
     {
         id: 'auto-radar-r1',
         name: 'AUTO-Radar R1',
-        keywords: ['r1', 'radar', '4d', 'nxp', '레이더'],
+        keywords: ['radar', 'r1', '4d', 'imaging', 'long-range'],
         specs: {
-            type: '4D Imaging Radar Module',
-            range: '최대 300m',
-            processor: 'NXP S32R294',
-            interface: '100BASE-T1, CAN-FD',
-            fov: '방위각 120° / 고도각 30°',
+            type: '4D Imaging Radar',
+            range: '300m (detection), 200m (tracking)',
+            fov: '±60° Azimuth, ±15° Elevation',
+            interface: 'Automotive Ethernet, CAN-FD',
+            resolution: '1° Azimuth, 2° Elevation',
         },
-        description: '악천후 환경에서 안정적인 객체 인지가 가능한 4D 이미징 레이더.',
+        description: 'Long-range 4D Imaging Radar module for all-weather perception. Provides elevation data for 3D occupancy grid construction.',
         datasheet: 'AUTO-Radar_R1_Datasheet.pdf',
     },
     {
         id: 'auto-vision-c1',
         name: 'AUTO-Vision C1',
-        keywords: ['c1', 'vision', 'camera', 'ambarella', '카메라'],
+        keywords: ['camera', 'c1', 'vision', '8mp', 'isp'],
         specs: {
-            resolution: '8MP (4K)',
-            processor: 'Ambarella CV22',
-            interface: 'GMSL2, FPD-Link III',
-            fov: '수평 120° 광각',
-            hdr: '120dB LED 플리커 억제(LFM)',
+            sensor: '8MP CMOS (Sony IMX678)',
+            hdr: '140dB HDR',
+            interface: 'GMSL2 / FPD-Link III',
+            temp: '-40 ~ 85°C',
+            features: 'LED Flicker Mitigation, ISP Bypass',
         },
-        description: '주야간 전천후 객체 인식용 고해상도 차량용 카메라.',
+        description: '8MP automotive-grade camera module with HDR. Optimized for Transformer-based vision perception and night driving.',
         datasheet: 'AUTO-Vision_C1_Datasheet.pdf',
     },
 ]
 
-const faqs = [
+export const faqs = [
     {
-        keywords: ['moq', 'mot', '최소', '주문', '수량', '몇 개', 'poc', '데모', '샘플'],
-        answer: '일반적으로 샘플 및 PoC 물량은 1~10pcs 단위로 제공됩니다.\n\n· 엣지 보드: 1pcs부터 PoC 대응 가능\n· 카메라/레이더 모듈: 5pcs부터\n\n양산 MOQ는 프로젝트 규모에 따라 보통 1,000pcs 단위로 협의됩니다.',
+        keywords: ['odd', 'operational', 'urban', 'city', 'intersection', 'left turn', 'vlm'],
+        answer: 'Yes, our solution includes ODD (Operational Design Domain) expansion for urban environments.\n\n· Complex intersection navigation with unprotected left-turn logic\n· Vision-language model (VLM) based scene understanding\n· Supports highway, urban arterial, and parking scenarios\n\nContact us for a detailed ODD specification document.',
     },
     {
-        keywords: ['리드타임', 'lead time', '납기', '배송', '언제', '기간'],
-        answer: '표준 리드타임 안내 (PoC 및 샘플 기준):\n\n· 샘플 (10pcs 이하): 2~3주\n· 소량 양산 (100pcs~): 8~12주\n· 대량 양산: 최소 16주 전 발주 필요\n\nASIL 인증용 문서화 패키지는 H/W 납품 시 동시 제공됩니다.',
+        keywords: ['autosar', 'adaptive', 'classic', 'bsw', 'rte', 'mcal'],
+        answer: 'Our software stack is fully compliant with both Adaptive and Classic AUTOSAR architectures.\n\n· Adaptive AUTOSAR: ara::com, ara::exec, ara::diag\n· Classic AUTOSAR: BSW, RTE, MCAL integration\n· ISO/SAE 21434 Cybersecurity framework support\n\nWe provide pre-validated AUTOSAR SWC packages for rapid integration.',
     },
     {
-        keywords: ['가격', 'price', '비용', '견적', '얼마'],
-        answer: '자율주행 ADAS 통합 보드의 가격은 인터페이스 구성 및 NPU TOPS 스펙에 따라 달라집니다.\n정확한 PoC 견적은 아래 메일로 NDA 요청 및 기술 스펙서를 보내주시면 안내해 드립니다:\n\n📧 sales@auto-adas.com',
+        keywords: ['euro ncap', 'ncap', '2026', 'safety', 'rating', 'assessment'],
+        answer: 'Our solutions are designed to meet Euro NCAP 2026 safety assessment requirements.\n\n· AEB (Autonomous Emergency Braking) for Pedestrians & Cyclists\n· Lane Support Systems (LSS)\n· Speed Assistance Systems (SAS)\n· Occupant Status Monitoring (OSM)\n\nWe provide a Euro NCAP compliance matrix upon request.',
     },
     {
-        keywords: ['커스텀', 'custom', '맞춤', '제', '변경', '수정'],
-        answer: '네, 차량 맞춤형 커스터마이징이 가능합니다.\n\n· 펌웨어: 특정 센서 데이터 파싱을 위한 미들웨어 수정\n· 하드웨어: GMSL2 포트 수 증감, 폼팩터 변경\n\n엔지니어링 비용(NRE)은 별도 산정됩니다.',
+        keywords: ['transformer', 'attention', 'perception', 'long-range', 'detection', 'bev'],
+        answer: 'We employ Transformer-based perception models for long-range object detection and scene understanding.\n\n· BEV (Bird\'s Eye View) Transformer architecture\n· Attention-based multi-camera fusion\n· Effective detection range up to 200m+\n· Real-time inference on NVIDIA Orin & Snapdragon Ride\n\nAsk for our Perception Architecture whitepaper for technical details.',
     },
     {
-        keywords: ['인증', 'certification', 'asil', 'iso26262', 'iso', '안전'],
-        answer: 'AUTO-ADAS 솔루션은 전장 규격을 준수합니다:\n\n· ISO 26262 (차량 기능안전): ASIL-B ~ ASIL-D Ready 보드 제공\n· ISO/SAE 21434 (사이버 보안): 적용 모듈 지원\n· AEC-Q100 지원 부품 100% 사용\n\n상세한 FMEDA 리포트는 파트너사 전용 포털에서 받을 수 있습니다.',
+        keywords: ['moq', 'mot', 'minimum', 'order', 'quantity', 'poc', 'demo', 'sample'],
+        answer: 'Sample and PoC quantities are available in small batches:\n\n· Edge AI Boards: From 1 unit for PoC\n· Camera / Radar Modules: From 5 units\n\nMass production MOQ is typically 1,000 units and can be discussed based on project scope.',
     },
     {
-        keywords: ['안녕', 'hello', 'hi', '반갑', '처음'],
-        answer: '안녕하세요! 👋\nAUTO-ADAS 글로벌 엔지니어 기술 봇입니다.\n\n아래와 같은 질문을 하실 수 있습니다:\n\n· 센서/제어기 스펙 문의 (예: "AUTO-Edge V2 스펙")\n· PoC 데모 샘플 절차\n· ASIL 인증 및 기능안전 문의\n· 하드웨어 커스터마이징\n\n기술 검토 중 궁금하신 점을 자유롭게 입력해 주세요.',
+        keywords: ['lead time', 'delivery', 'when', 'timeline', 'shipping'],
+        answer: 'Standard lead time reference (PoC & Sample):\n\n· Samples (≤10 units): 2~3 weeks\n· Small batch (100+ units): 8~12 weeks\n· Mass production: Min. 16 weeks advance ordering\n\nASIL documentation packages are delivered with hardware.',
+    },
+    {
+        keywords: ['asil', 'iso 26262', 'safety', 'certification', 'functional', 'lockstep'],
+        answer: 'Our full ADAS integration board meets ISO 26262 ASIL-D standards.\n\n· ASIL-D lockstep core architecture\n· ISO/SAE 21434 Cybersecurity compliance\n· Full safety case documentation included\n· Adaptive & Classic AUTOSAR support\n\n📎 Download: Safety Case Guidebook (PDF, 5.1MB)',
+    },
+    {
+        keywords: ['custom', 'hardware', 'customization', 'modification', 'design'],
+        answer: 'Yes, we offer hardware customization services:\n\n· Interface expansion (additional CAN/LIN/Ethernet ports)\n· Custom connector layout for specific vehicle platforms\n· Thermal design optimization for your target environment\n· PCBA form factor adjustments\n\nCustom projects typically begin with a 4~6 week design phase after NDA.',
+    },
+    {
+        keywords: ['nvidia', 'orin', 'jetson', 'agx', 'orin nx', 'orin nano'],
+        answer: 'We provide solutions based on the NVIDIA Orin platform:\n\n· AUTO-Edge V1: NVIDIA Orin Nano (40 TOPS)\n· AUTO-Edge V2: NVIDIA Orin NX (100 TOPS)\n· Both support JetPack 5.x / 6.x SDK\n· TensorRT, CUDA, and DeepStream optimized\n\nAsk about our NVIDIA DGX-based training pipeline for custom model development.',
+    },
+    {
+        keywords: ['qualcomm', 'snapdragon', 'ride', 'sa8295'],
+        answer: 'Our AUTO-Fusion F1 platform is powered by Qualcomm Snapdragon Ride (SA8295P).\n\n· 30+ TOPS AI compute\n· Multi-sensor fusion with up to 8 GMSL2 cameras\n· PCIe 4.0 for LiDAR/Radar expansion\n· Qualcomm Neural Processing SDK support\n\nIdeal for L2+ to L3 autonomous driving applications.',
     },
 ]
-
-export { products, faqs }

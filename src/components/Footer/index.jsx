@@ -1,11 +1,11 @@
 import styles from './Footer.module.css'
 
 const navLinks = [
-    { label: '현실 진단', href: '#pain-points' },
-    { label: '핵심 기능', href: '#features' },
-    { label: '진행 방식', href: '#process' },
-    { label: '데모', href: '#demo' },
-    { label: '무료 진단', href: '#contact' },
+    { label: 'Bottleneck', href: '#pain-points' },
+    { label: 'Core Tech', href: '#features' },
+    { label: 'Process', href: '#process' },
+    { label: 'Demo', href: '#demo' },
+    { label: 'Contact', href: '#contact' },
 ]
 
 const techStack = [
@@ -31,13 +31,13 @@ export default function Footer() {
                             ▲ AUTO-ADAS
                         </a>
                         <p className={styles.brandDesc}>
-                            차세대 모빌리티를 위한 초정밀 ADAS 솔루션.{'\n'}
-                            멀티 센서 퓨전과 실시간 엣지 AI.
+                            Next-gen software-defined ADAS solutions.{'\n'}
+                            Multi-sensor fusion & real-time edge AI.
                         </p>
                     </div>
 
-                    <nav className={styles.nav} aria-label="푸터 네비게이션">
-                        <h4 className={styles.colTitle}>바로가기</h4>
+                    <nav className={styles.nav} aria-label="Footer Navigation">
+                        <h4 className={styles.colTitle}>Quick Links</h4>
                         <ul>
                             {navLinks.map((link) => (
                                 <li key={link.href}>
@@ -50,7 +50,7 @@ export default function Footer() {
                     </nav>
 
                     <div className={styles.tech}>
-                        <h4 className={styles.colTitle}>기술 스택</h4>
+                        <h4 className={styles.colTitle}>Tech Stack</h4>
                         <div className={styles.techTags}>
                             {techStack.map((t) => (
                                 <span key={t} className={styles.tag}>{t}</span>
@@ -64,8 +64,8 @@ export default function Footer() {
                 <div className={styles.bottom}>
                     <p className={styles.copy}>© {year} AUTO-ADAS. Powered by Edge AI.</p>
                     <div className={styles.links}>
-                        <a href="#">개인정보처리방침</a>
-                        <a href="#">이용약관</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
                     </div>
                 </div>
             </div>
